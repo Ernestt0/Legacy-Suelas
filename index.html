@@ -96,13 +96,13 @@ h2{font-size:clamp(32px,5vw,58px)}
 .cab{display:grid;gap:10px;margin-bottom:clamp(28px,4vw,48px)}
 .cab p{color:var(--muted);max-width:52ch}
 .tarjetas{display:grid;gap:20px;grid-template-columns:1fr}
-.card{display:flex;flex-direction:column;background:var(--blanco);border:1px solid var(--linea);border-radius:20px;overflow:hidden;transition:transform .45s var(--resorte),box-shadow .3s}
-.card.activa{transform:scale(1.025);box-shadow:0 18px 40px rgba(15,36,80,.16);position:relative;z-index:2}
+.card{position:relative;display:flex;flex-direction:column;background:var(--blanco);border:1px solid var(--linea);border-radius:20px;overflow:hidden;transition:transform .45s var(--resorte),box-shadow .3s}
+.card.activa{transform:scale(1.025);box-shadow:0 18px 40px rgba(15,36,80,.16);z-index:2}
 .escena{position:relative;background:var(--estudio);aspect-ratio:1;overflow:hidden}
 .escena video{transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .card.activa .escena video{transform:scale(1.1)}
 .escena video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.info{padding:22px 20px 22px;display:grid;gap:12px;flex:1;grid-template-rows:auto auto auto auto auto auto 1fr}
+.info{position:relative;padding:22px 20px 22px;display:grid;gap:12px;flex:1;grid-template-rows:auto auto auto auto auto auto 1fr}
 .ref{font-size:15px;font-weight:700;color:var(--azul2)}
 .info h3{font-size:clamp(23px,2.2vw,27px)}
 .usos{color:var(--muted);font-weight:500}
@@ -114,13 +114,20 @@ h2{font-size:clamp(32px,5vw,58px)}
 .rango+.rango{border-left:1px solid var(--linea)}
 .rango span{font-size:14px;color:var(--muted);font-weight:500}
 .rango b{font-size:20px;font-weight:800;color:var(--azul);font-variant-numeric:tabular-nums;white-space:nowrap}
-.equiv summary{cursor:pointer;width:fit-content;padding-block:2px;font-size:15px;font-weight:600;color:var(--azul2)}
-.equiv table{width:100%;margin-top:8px;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
-.equiv th{padding:6px 14px;text-align:left;font-weight:700;color:var(--azul);background:var(--papel)}
-.equiv td{padding:5px 14px;border-top:1px solid var(--linea)}
+.ver-equiv{justify-self:start;padding:2px 0;border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:var(--azul2);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.equiv{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;gap:12px;padding:18px 20px;background:var(--noche);color:#fff;overflow:auto;animation:equiv .25s ease both}
+.equiv[hidden]{display:none}
+.equiv h4{margin:0;font-size:20px;font-weight:800;font-stretch:112%;line-height:1.1}
+.equiv p{margin:2px 0 0;font-size:15px;color:var(--plata)}
+.equiv table{width:100%;max-width:360px;margin-block:auto;margin-inline:auto;border-collapse:collapse;font-size:16px;font-variant-numeric:tabular-nums;text-align:center}
+.equiv th{padding:4px 8px;font-size:15px;font-weight:600;color:var(--plata);border-bottom:1px solid rgba(255,255,255,.3)}
+.equiv td{padding:4px 8px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.14)}
+.equiv .cerrar{flex:none;min-height:50px;width:100%;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;font:inherit;font-weight:700;border-radius:999px;cursor:pointer;transition:background .2s}
+.equiv .cerrar:hover{background:rgba(255,255,255,.12)}
+@keyframes equiv{from{opacity:0}}
 .info .btn{align-self:end;margin-top:4px}
-@media(min-width:640px){.tarjetas{grid-template-columns:1fr 1fr}.card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.tarjetas{grid-template-columns:repeat(3,1fr);gap:24px}.card:last-child:nth-child(odd){grid-column:auto;display:flex}}
+@media(min-width:640px){.tarjetas{grid-template-columns:1fr 1fr}.card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.card:last-child:nth-child(odd) .escena{aspect-ratio:auto;min-height:100%}}
+@media(min-width:1100px){.tarjetas{grid-template-columns:repeat(3,1fr);gap:24px}.card:last-child:nth-child(odd){grid-column:auto;display:flex}.card:last-child:nth-child(odd) .escena{aspect-ratio:1;min-height:0}}
 
 /* Precios */
 .precios{background:var(--noche);color:#fff}
@@ -384,11 +391,13 @@ const products = [
    specs:["EVA de absorción biomecánica","Inserto de caucho natural 1.1 antideslizante","Ideal para calzado tipo slip-on"], eu:[36,40]}
 ];
 
-const tallas = ([a,b]) => {
+const tallas = ([a,b]) => `<div class="tallas"><div class="rango"><span>Talla Euro</span><b>${a} a ${b}</b></div><div class="rango"><span>Talla nacional</span><b>${a-2} a ${b-2}</b></div></div>
+    <button class="ver-equiv" type="button" aria-expanded="false">Ver equivalencia de tallas</button>`;
+
+const equivalencia = (p) => {
   let filas = "";
-  for (let e = a; e <= b; e++) filas += `<tr><td>${e}</td><td>${e-2}</td></tr>`;
-  return `<div class="tallas"><div class="rango"><span>Talla Euro</span><b>${a} a ${b}</b></div><div class="rango"><span>Talla nacional</span><b>${a-2} a ${b-2}</b></div></div>
-    <details class="equiv"><summary>Ver equivalencia de tallas</summary><table><thead><tr><th scope="col">Euro</th><th scope="col">Nacional</th></tr></thead><tbody>${filas}</tbody></table></details>`;
+  for (let e = p.eu[0]; e <= p.eu[1]; e++) filas += `<tr><td>${e}</td><td>${e-2}</td></tr>`;
+  return `<div class="equiv" hidden><div><h4>Equivalencia de tallas</h4><p>${p.ref}</p></div><table><thead><tr><th scope="col">Euro</th><th scope="col">Nacional</th></tr></thead><tbody>${filas}</tbody></table><button class="cerrar" type="button">Cerrar</button></div>`;
 };
 
 document.getElementById("tarjetas").innerHTML = products.map(p => `<article class="card" tabindex="0">
@@ -400,6 +409,7 @@ document.getElementById("tarjetas").innerHTML = products.map(p => `<article clas
     <ul class="spec">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
     ${tallas(p.eu)}
     <a class="btn btn-wa" href="${wa(`Hola Legacy Minds, quiero cotizar la ${p.ref}. Tallas: ___ Cantidad de pares: ___`)}" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp la ${p.ref}"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar esta referencia</a>
+    ${equivalencia(p)}
   </div>
 </article>`).join("");
 
@@ -425,6 +435,20 @@ document.getElementById("tarjetas").innerHTML = products.map(p => `<article clas
     cards.forEach(c => o.observe(c.querySelector(".escena")));
   }
 })();
+
+/* Equivalencia de tallas: se abre sobre su tarjeta sin mover las demás */
+document.getElementById("tarjetas").addEventListener("click", e => {
+  const b = e.target.closest(".ver-equiv, .cerrar");
+  if (!b) return;
+  const c = b.closest(".card"), panel = c.querySelector(".equiv"), ver = c.querySelector(".ver-equiv"), abrir = b === ver;
+  panel.hidden = !abrir; ver.setAttribute("aria-expanded", abrir);
+  (abrir ? panel.querySelector(".cerrar") : ver).focus({preventScroll:true});
+});
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  const p = document.querySelector(".equiv:not([hidden])");
+  if (p) p.querySelector(".cerrar").click();
+});
 
 /* Pasos: recorrido 1, 2, 3 en bucle mientras la sección está en pantalla */
 (() => {
