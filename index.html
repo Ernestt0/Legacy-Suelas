@@ -102,20 +102,22 @@ h2{font-size:clamp(32px,5vw,58px)}
 .escena video{transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .card.activa .escena video{transform:scale(1.1)}
 .escena video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.info{padding:22px 20px 22px;display:grid;gap:12px;flex:1;grid-template-rows:auto auto auto auto auto 1fr}
+.info{padding:22px 20px 22px;display:grid;gap:12px;flex:1;grid-template-rows:auto auto auto auto auto auto 1fr}
 .ref{font-size:15px;font-weight:700;color:var(--azul2)}
 .info h3{font-size:clamp(23px,2.2vw,27px)}
 .usos{color:var(--muted);font-weight:500}
 .spec{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
 .spec li{padding-left:20px;position:relative}
 .spec li::before{content:"";position:absolute;left:0;top:.48em;width:9px;height:9px;border-radius:50%;background:var(--ambar2)}
-.regla{display:grid;gap:6px}
-.regla-tit{font-size:14px;color:var(--muted);font-weight:600}
-.escala{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));border:1px solid var(--linea);border-radius:10px;overflow:hidden;font-variant-numeric:tabular-nums}
-.t{display:grid;gap:1px;justify-items:center;padding:7px 0 6px;line-height:1.1;font-size:15px;font-weight:700;color:#7C889C;border-left:1px solid var(--linea)}
-.t:first-child{border-left:0}
-.t small{font-size:12px;font-weight:500}
-.t.si{background:var(--azul);color:#fff;border-left-color:rgba(255,255,255,.22)}
+.tallas{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--linea);border-radius:12px;overflow:hidden}
+.rango{display:grid;gap:1px;padding:10px 14px}
+.rango+.rango{border-left:1px solid var(--linea)}
+.rango span{font-size:14px;color:var(--muted);font-weight:500}
+.rango b{font-size:20px;font-weight:800;color:var(--azul);font-variant-numeric:tabular-nums;white-space:nowrap}
+.equiv summary{cursor:pointer;width:fit-content;padding-block:2px;font-size:15px;font-weight:600;color:var(--azul2)}
+.equiv table{width:100%;margin-top:8px;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.equiv th{padding:6px 14px;text-align:left;font-weight:700;color:var(--azul);background:var(--papel)}
+.equiv td{padding:5px 14px;border-top:1px solid var(--linea)}
 .info .btn{align-self:end;margin-top:4px}
 @media(min-width:640px){.tarjetas{grid-template-columns:1fr 1fr}.card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}}
 @media(min-width:1100px){.tarjetas{grid-template-columns:repeat(3,1fr);gap:24px}.card:last-child:nth-child(odd){grid-column:auto;display:flex}}
@@ -382,10 +384,11 @@ const products = [
    specs:["EVA de absorción biomecánica","Inserto de caucho natural 1.1 antideslizante","Ideal para calzado tipo slip-on"], eu:[36,40]}
 ];
 
-const regla = ([a,b]) => {
-  let c = "";
-  for (let e = 36; e <= 45; e++) c += `<div class="t${e>=a&&e<=b?" si":""}">${e}<small>${e-2}</small></div>`;
-  return `<div class="regla" role="img" aria-label="Tallas disponibles: Euro ${a} a ${b}, nacional ${a-2} a ${b-2}"><span class="regla-tit">Tallas ${a} a ${b} Euro (${a-2} a ${b-2} nacional)</span><div class="escala" aria-hidden="true">${c}</div></div>`;
+const tallas = ([a,b]) => {
+  let filas = "";
+  for (let e = a; e <= b; e++) filas += `<tr><td>${e}</td><td>${e-2}</td></tr>`;
+  return `<div class="tallas"><div class="rango"><span>Talla Euro</span><b>${a} a ${b}</b></div><div class="rango"><span>Talla nacional</span><b>${a-2} a ${b-2}</b></div></div>
+    <details class="equiv"><summary>Ver equivalencia de tallas</summary><table><thead><tr><th scope="col">Euro</th><th scope="col">Nacional</th></tr></thead><tbody>${filas}</tbody></table></details>`;
 };
 
 document.getElementById("tarjetas").innerHTML = products.map(p => `<article class="card" tabindex="0">
@@ -395,7 +398,7 @@ document.getElementById("tarjetas").innerHTML = products.map(p => `<article clas
     <h3>${p.name}</h3>
     <p class="usos">${p.usos}</p>
     <ul class="spec">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
-    ${regla(p.eu)}
+    ${tallas(p.eu)}
     <a class="btn btn-wa" href="${wa(`Hola Legacy Minds, quiero cotizar la ${p.ref}. Tallas: ___ Cantidad de pares: ___`)}" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp la ${p.ref}"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar esta referencia</a>
   </div>
 </article>`).join("");
