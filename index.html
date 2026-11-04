@@ -148,9 +148,10 @@ h2{font-size:clamp(32px,5vw,58px)}
 .paso h3{font-size:24px;align-self:end;transition:color .35s}
 .paso p{color:var(--muted)}
 /* Tramo que une cada paso con el siguiente */
-.paso:not(:last-child)::before,.paso:not(:last-child)::after{content:"";position:absolute;left:30px;top:62px;bottom:-34px;width:3px;background:#E6EBF3}
-.paso:not(:last-child)::after{background:var(--ambar);transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
+.paso:not(:last-child)::before,.paso:not(:last-child)::after{content:"";position:absolute;left:28px;top:31px;bottom:-65px;width:6px;background:#E6EBF3}
+.paso:not(:last-child)::after{background:var(--azul);transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
 .paso.hecho::after{transform:scaleY(1)!important}
+.paso.hecho .ico{background:var(--azul);color:#fff}
 .paso.activo .ico{background:var(--azul);color:#fff;transform:scale(1.14)}
 .paso.activo h3{color:var(--azul2)}
 .paso.activo .pt{animation:pt 1s ease-in-out infinite}
@@ -171,7 +172,7 @@ h2{font-size:clamp(32px,5vw,58px)}
   .paso .ico{grid-row:auto;width:84px;height:84px}
   .paso .ico svg{width:42px;height:42px}
   .paso p{max-width:32ch}
-  .paso:not(:last-child)::before,.paso:not(:last-child)::after{left:calc(50% + 42px);right:auto;top:41px;bottom:auto;height:3px;width:calc(100% + clamp(20px,4vw,48px) - 84px)}
+  .paso:not(:last-child)::before,.paso:not(:last-child)::after{left:50%;right:auto;top:39px;bottom:auto;height:6px;width:calc(100% + clamp(20px,4vw,48px))}
   .paso:not(:last-child)::after{transform:scaleX(0);transform-origin:left}
 }
 
