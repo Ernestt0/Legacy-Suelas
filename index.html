@@ -117,7 +117,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 .usos{color:var(--muted);font-weight:500}
 .spec{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
 .spec li{padding-left:20px;position:relative}
-.spec li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:11.5px;background:var(--ambar2);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.spec li::before{content:"";position:absolute;left:0;top:.48em;width:9px;height:9px;border-radius:50%;background:var(--ambar2)}
 .regla{display:grid;gap:6px}
 .regla-tit{font-size:14px;color:var(--muted);font-weight:600}
 .escala{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));border:1px solid var(--linea);border-radius:10px;overflow:hidden;font-variant-numeric:tabular-nums}
@@ -143,12 +143,12 @@ h2{font-size:clamp(32px,5vw,58px)}
 /* Cómo comprar */
 .pasos{list-style:none;margin:0;padding:0;display:grid;gap:34px}
 .paso{position:relative;display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
-.paso .ico{grid-row:span 2;position:relative;z-index:1;width:62px;height:70px;display:grid;place-items:center;background:#E6EBF3;color:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);transition:background .35s,color .35s,transform .5s var(--resorte)}
+.paso .ico{grid-row:span 2;position:relative;z-index:1;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#E6EBF3;color:var(--azul);transition:background .35s,color .35s,transform .5s var(--resorte)}
 .paso .ico svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
 .paso h3{font-size:24px;align-self:end;transition:color .35s}
 .paso p{color:var(--muted)}
 /* Tramo que une cada paso con el siguiente */
-.paso:not(:last-child)::before,.paso:not(:last-child)::after{content:"";position:absolute;left:30px;top:70px;bottom:-34px;width:3px;background:#E6EBF3}
+.paso:not(:last-child)::before,.paso:not(:last-child)::after{content:"";position:absolute;left:30px;top:62px;bottom:-34px;width:3px;background:#E6EBF3}
 .paso:not(:last-child)::after{background:var(--ambar);transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
 .paso.hecho::after{transform:scaleY(1)!important}
 .paso.activo .ico{background:var(--azul);color:#fff;transform:scale(1.14)}
@@ -168,10 +168,10 @@ h2{font-size:clamp(32px,5vw,58px)}
 @media(min-width:768px){
   .pasos{grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px)}
   .paso{grid-template-columns:1fr;justify-items:center;text-align:center;gap:12px}
-  .paso .ico{grid-row:auto;width:80px;height:90px}
+  .paso .ico{grid-row:auto;width:84px;height:84px}
   .paso .ico svg{width:42px;height:42px}
   .paso p{max-width:32ch}
-  .paso:not(:last-child)::before,.paso:not(:last-child)::after{left:calc(50% + 40px);right:auto;top:44px;bottom:auto;height:3px;width:calc(100% + clamp(20px,4vw,48px) - 80px)}
+  .paso:not(:last-child)::before,.paso:not(:last-child)::after{left:calc(50% + 42px);right:auto;top:41px;bottom:auto;height:3px;width:calc(100% + clamp(20px,4vw,48px) - 84px)}
   .paso:not(:last-child)::after{transform:scaleX(0);transform-origin:left}
 }
 
