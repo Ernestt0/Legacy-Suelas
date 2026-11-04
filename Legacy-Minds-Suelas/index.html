@@ -1,0 +1,289 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Legacy Minds Suelas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Identidad Legacy Minds: azul marino sobrio (60-30-10), tarjetas blancas redondeadas, botones píldora negros, Helvetica pesada con palabras clave en azul. */
+:root{--azul:#1B3A73;--azul2:#2758A8;--azul3:#3F74C9;--cielo:#9CC3F0;--hielo:#F3F6FB;--tinta:#111827;--muted:#556070;--linea:#E0E7F2;--ambar:#E3A845;--ambar2:#C98B26;--card:#FFFFFF;
+--display:"Helvetica Neue","Helvetica Neue Heavy",Helvetica,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--hielo);color:var(--tinta);font-family:var(--display);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;margin:0}
+.hl{color:var(--azul2)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;justify-self:center}
+.chip svg{color:var(--azul3)}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.card:focus-visible{outline:3px solid var(--cielo);outline-offset:3px}
+.btn-n{background:var(--tinta);color:#fff;border:1px solid #333}
+.btn-b{background:var(--ambar);color:var(--tinta)}
+.btn-b:hover{background:var(--ambar2)}
+/* Hero */
+.hero{background:linear-gradient(90deg,var(--cielo) 0%,var(--azul3) 12%,var(--azul) 35%,var(--azul) 65%,var(--azul3) 88%,var(--cielo) 100%);color:#fff;padding-bottom:56px}
+.nav{padding-block:16px}
+.navbox{background:#fff;color:var(--tinta);border:3px solid #E3E8EF;border-radius:16px;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-size:13px;line-height:1.05;letter-spacing:.02em;color:var(--azul)}
+.logo small{display:block;font-size:8px;letter-spacing:.3em;color:var(--muted)}
+.navbox{width:fit-content;max-width:100%;margin:0 auto;gap:28px!important;padding:8px 10px 8px 14px!important;border-radius:999px!important;background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.35)!important;-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);color:#fff!important;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.navbox .logo b{color:#fff}.navbox .logo small{color:rgba(255,255,255,.75)}
+.navlinks{display:flex;gap:6px;font-size:14px;font-weight:600}
+.navlinks a{padding:8px 14px;border-radius:999px;transition:background .2s}
+.navlinks a:hover{background:rgba(255,255,255,.2)}
+.navlinks a{text-decoration:none}
+@media(max-width:420px){.navbox .logo span{display:none}.navlinks{font-size:13px}}
+.herobody{display:grid;gap:22px;text-align:center;justify-items:center;padding-top:40px}
+.hero h1{font-size:clamp(38px,7vw,76px);max-width:16ch}
+.hero p{font-size:clamp(17px,2.2vw,21px);max-width:44ch;margin:0;font-weight:500}
+.hero{position:relative;overflow:hidden;min-height:640px;background:var(--azul)}
+.hero>.wrap{position:relative;z-index:2}
+.bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.fgvid{display:none}
+@media(min-width:860px){.bgvid{display:none}.fgvid{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:0}.veil{background:linear-gradient(90deg,rgba(12,28,64,.92) 0%,rgba(27,58,115,.8) 45%,rgba(27,58,115,.15) 75%,rgba(12,28,64,.25))!important}.herobody{text-align:left;justify-items:start;max-width:620px;margin-left:max(16px,calc((100% - 1120px)/2))}.herobody .row{justify-content:flex-start}}
+.veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,28,64,.55),rgba(27,58,115,.72) 60%,rgba(12,28,64,.88))}
+.herobody{padding-block:70px 90px}
+.swoosh{position:relative;display:inline-block;color:#fff}
+.swoosh::after{content:"";position:absolute;left:4%;right:4%;bottom:-.18em;height:.12em;border-radius:99px;background:var(--ambar);transform:rotate(-1.5deg)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.specs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
+.specs div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:12px 18px;font-size:13px}
+.specs b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+/* Secciones en tarjeta blanca */
+.panel{background:var(--card);border-radius:24px;margin-top:-28px;position:relative}
+section .wrap{padding-block:56px;display:grid;gap:28px}
+.head{display:grid;gap:12px;text-align:center}
+section h2{font-size:clamp(30px,4.6vw,48px)}
+.sub{margin:0;color:var(--muted);text-align:center}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px) and (max-width:899px){.grid{grid-template-columns:1fr 1fr}.grid>:last-child:nth-child(odd){grid-column:1/-1}.grid>.card:last-child:nth-child(odd) .sole{aspect-ratio:16/7}}
+@media(max-width:480px){.prices div{padding:18px 14px}.prices .lbl{font-size:10px;letter-spacing:.08em}.fablabel{font-size:13px;padding:9px 13px}}
+.nw{white-space:nowrap}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.sedes{grid-template-columns:1fr 1fr!important}}
+.card{background:#fff;border:1px solid var(--linea);border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.card:hover,.card.open{transform:scale(1.02);box-shadow:0 14px 34px rgba(27,58,115,.14)}
+.sole{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;background:#fff;border-bottom:1px solid var(--linea)}
+.sole{position:relative;overflow:hidden;perspective:900px;background:radial-gradient(ellipse at 50% 40%,#fff 0%,#F3F6FB 70%,#E6ECF4 100%)!important}
+.sole::after{content:"";position:absolute;left:22%;right:22%;bottom:9%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(17,24,39,.28),transparent);animation:shadow 5s cubic-bezier(.65,0,.35,1) infinite;z-index:0}
+.sole img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;padding:18px 18px 34px;mix-blend-mode:multiply;transform-style:preserve-3d;animation:levita 5s cubic-bezier(.65,0,.35,1) infinite}
+.flip{position:absolute;inset:0;z-index:1;perspective:1100px;display:grid;place-items:center;animation:levita 5s cubic-bezier(.65,0,.35,1) infinite}
+.flipin{position:relative;width:88%;aspect-ratio:1;transform-style:preserve-3d}
+.flipin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:0!important;mix-blend-mode:normal!important;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(90deg);animation:cara 12s cubic-bezier(.83,0,.17,1) infinite!important}
+.flipin img:nth-child(2){animation-delay:-9s!important}
+.flipin img:nth-child(3){animation-delay:-6s!important}
+.flipin img:nth-child(4){animation-delay:-3s!important}
+@media(prefers-reduced-motion:reduce){.flipin img:first-child{transform:none}}
+@keyframes cara{0%{transform:rotateY(90deg)}5%,20%{transform:rotateY(0)}25%,100%{transform:rotateY(-90deg)}}
+.sole:has(.flip){background:#fff!important}
+.sole .svid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.sole:has(.svid)::after{display:none}
+.card:nth-child(2) .sole img,.card:nth-child(2) .sole::after{animation-delay:-1.6s}
+.card:nth-child(3) .sole img,.card:nth-child(3) .sole::after{animation-delay:-3.2s}
+.card:hover .sole img{animation-duration:2.4s}
+.card:hover .sole::after{animation-duration:2.4s}
+@keyframes levita{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes shadow{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.72);opacity:.55}}
+.sole svg{width:70%;transition:transform .3s}
+.card:hover .sole svg{transform:scale(1.08) rotate(-4deg)}
+.over{position:absolute;inset:0;background:rgba(27,58,115,.95);color:#fff;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px;opacity:0;transition:opacity .2s}
+.card:hover .over,.card.open .over{opacity:1}
+.over table{border-collapse:collapse;font-variant-numeric:tabular-nums;width:100%;font-size:14px}
+.over td,.over th{border-bottom:1px solid rgba(255,255,255,.25);padding:6px 0;text-align:left}
+.lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.body{padding:20px;display:grid;gap:8px}
+.ref{font-size:12px;color:var(--azul3);letter-spacing:.1em;font-weight:700}
+.body h3{font-size:22px}
+.spec{margin:4px 0;padding-left:18px;display:grid;gap:4px;font-size:14px;color:var(--muted)}
+.spec li::marker{color:var(--ambar2)}
+.tag{font-size:12px;font-weight:600;background:var(--hielo);color:var(--azul2);border-radius:999px;padding:4px 10px;justify-self:start}
+.prices{display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;border:1px solid var(--linea)}
+.prices div{padding:24px;display:grid;gap:4px}
+.prices div+div{background:var(--azul);color:#fff}
+.prices div+div b{color:var(--ambar)}
+.prices b{font-size:clamp(30px,6vw,46px);font-variant-numeric:tabular-nums}
+.step,.sede{background:var(--hielo);border-radius:20px;padding:26px;display:grid;gap:10px;align-content:start}
+.num{width:36px;height:36px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-weight:800}
+.step h3,.sede h3{font-size:24px}
+.step p,.sede p{margin:0;color:var(--muted)}
+.sedes{display:grid;gap:20px;grid-template-columns:1fr}
+.sede.op{background:var(--azul);color:#fff}
+.sede.op p,.sede.op li{color:#DCE4EE}
+.badge{background:#fff;color:var(--azul);font-weight:800;font-size:12px;letter-spacing:.06em;padding:7px 12px;border-radius:999px;justify-self:start;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.65}}
+ul.log{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.faq{display:grid;max-width:760px;width:100%;justify-self:center}
+.faqwrap{display:grid;gap:28px}
+@media(min-width:860px){.faqwrap{grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:start}}
+.faq details{border-bottom:1px solid var(--linea);padding-block:18px}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px}
+.faq summary:focus-visible{outline:3px solid var(--cielo)}
+.faq p{margin:10px 0 0;color:var(--muted)}
+footer{background:var(--tinta);color:#B8C0D0;font-size:13px}
+footer a{text-decoration:none}
+.fcta{padding-block:44px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #263247}
+.fcta h3{color:#fff;font-size:clamp(24px,3.4vw,34px)}.fcta p{margin:6px 0 0}
+.fgrid{padding-block:44px;display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:640px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.fgrid{grid-template-columns:1.4fr 1fr 1.2fr 1fr}}
+.fcol{display:grid;gap:10px;align-content:start;font-size:14px}.fcol p{margin:0;line-height:1.6}
+.fcol b{color:#fff}
+.fcol>a:not(.logo):hover{color:var(--ambar)}
+.fh{color:#fff;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.fbot{padding-block:20px 96px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;border-top:1px solid #263247;font-size:12px;color:#8A96AB}
+.fablabel{position:fixed;z-index:50;right:calc(94px + env(safe-area-inset-right,0px));bottom:calc(34px + env(safe-area-inset-bottom,0px));background:#111827;color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:14px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);white-space:nowrap;opacity:0;transform:translateX(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fablabel.show{opacity:1;transform:none;pointer-events:auto}
+.fab{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fade{animation:fade .6s ease both}
+@keyframes fade{from{opacity:.001;transform:translateY(12px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="hero">
+  <video class="bgvid" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <video class="fgvid" src="promo169.mp4" poster="poster169.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="veil"></div>
+  <div class="wrap nav">
+    <div class="navbox">
+      <a class="logo" href="#">
+        <img src="logo.png" alt="" width="40" height="40" style="object-fit:contain">
+        <span><b>LEGACY MINDS</b><small>LIMITED</small></span>
+      </a>
+      <nav class="navlinks"><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a></nav>
+    </div>
+  </div>
+  <div class="wrap herobody fade">
+    <h1>La base de cada <span class="swoosh">paso que fabricas</span></h1>
+    <p>Suelas importadas al por mayor, listas para tu producción.</p>
+    <div class="row">
+      <a class="btn btn-n" href="#catalogo">Ver catálogo</a>
+      <a class="btn btn-b" id="cta-wa" href="#" target="_blank" rel="noopener">Cotizar mayorista</a>
+    </div>
+  </div>
+</header>
+
+<main class="panel">
+<section id="catalogo">
+  <div class="wrap">
+    <div class="head">
+      <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"/></svg>Catálogo</span>
+      <h2>Referencias <span class="hl">en stock</span></h2>
+      <p class="sub">Toca una tarjeta para ver la regla de tallaje.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="prices">
+      <div><span class="lbl" style="color:var(--muted)">Detal / muestras · 1–99 pares</span><b>$16.500</b>COP por par</div>
+      <div><span class="lbl">Mayorista · 100+ pares</span><b>$16.000</b>COP por par</div>
+    </div>
+  </div>
+</section>
+
+<section id="comprar">
+  <div class="wrap">
+    <div class="head"><h2>Del pedido <span class="hl">a tu taller</span></h2></div>
+    <div class="grid">
+      <div class="step"><span class="num">1</span><h3>Cotiza</h3><p>Escríbenos por WhatsApp con referencia, tallas y cantidad de pares.</p></div>
+      <div class="step"><span class="num">2</span><h3>Paga</h3><p>Transfiere a la cuenta Bancolombia que te enviamos con la cotización.</p></div>
+      <div class="step"><span class="num">3</span><h3>Recibe</h3><p>Despachamos desde Cúcuta por la transportadora de tu preferencia. El flete se paga contra entrega.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sedes">
+  <div class="wrap">
+    <div class="head"><h2>Dónde <span class="hl">operamos</span></h2></div>
+    <div class="sedes">
+      <div class="sede">
+        <span class="ref">SEDE ADMINISTRATIVA</span>
+        <h3>Medellín</h3>
+        <p>Ed. Santa María del Parque, Oficina 1202. Barrio Santa María de los Ángeles, El Poblado.</p>
+        <p><b>Pedidos:</b> <span class="nw">+57 313 551 3979</span> · <span class="nw">+57 317 746 7739</span></p>
+      </div>
+      <div class="sede op">
+        <span class="badge">¡ATENCIÓN AL PÚBLICO HABILITADA!</span>
+        <span class="ref" style="color:#C9D6E6">SEDE OPERATIVA / ALMACÉN</span>
+        <h3>Cúcuta</h3>
+        <p>Calle 9 # 9-72 Local 101, Barrio El Llano, Centro.</p>
+        <ul class="log">
+          <li>→ Stock en bodega con entregas a Medellín, Cali, Bogotá, Bucaramanga y todo el país</li>
+          <li>→ Despacho por la transportadora de tu preferencia</li>
+          <li>→ Flete contra entrega</li>
+          <li>→ Pago por transferencia Bancolombia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="faqwrap"><div class="head" style="text-align:left"><h2>Preguntas <span class="hl">frecuentes</span></h2></div>
+    <div class="faq" style="justify-self:start;max-width:none">
+      <details><summary>¿Cuál es el pedido mínimo?</summary><p>No hay mínimo. De 1 a 99 pares el precio es $16.500; desde 100 pares baja a $16.000 por par.</p></details>
+      <details><summary>¿Fabrican suelas a medida?</summary><p>No. Distribuimos referencias importadas en stock; no hacemos desarrollos bajo pedido.</p></details>
+      <details><summary>¿Puedo mezclar referencias y tallas?</summary><p>Sí. Cuéntanos la combinación por WhatsApp y te confirmamos disponibilidad.</p></details>
+      <details><summary>¿Puedo recoger en el almacén?</summary><p>Sí. La sede de Cúcuta tiene atención al público en Calle 9 # 9-72 Local 101, El Llano.</p></details>
+      <details><summary>¿Qué material son?</summary><p>EVA (ultraliviana o anatómica según referencia) con huella de caucho antideslizante.</p></details>
+    </div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fcta">
+    <div><h3>¿Listo para tu próxima producción?</h3><p>Cotiza por WhatsApp y despachamos desde Cúcuta a todo el país.</p></div>
+    <a class="btn btn-b" id="cta-wa2" href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+  </div>
+  <div class="wrap fgrid">
+    <div class="fcol">
+      <a class="logo" href="#"><img src="logo.png" alt="" width="40" height="40" style="object-fit:contain"><span><b style="color:#fff">LEGACY MINDS</b><small style="color:#8A96AB">LIMITED</small></span></a>
+      <p>Importadores mayoristas directos de suelas para calzado en Colombia.</p>
+    </div>
+    <div class="fcol"><span class="fh">Navegación</span><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a><a href="#sedes">Sedes</a><a href="#faq">Preguntas frecuentes</a></div>
+    <div class="fcol"><span class="fh">Sedes</span><p><b>Medellín</b><br>Ed. Santa María del Parque, Of. 1202, El Poblado</p><p><b>Cúcuta · Bodega</b><br>Calle 9 # 9-72 Local 101, El Llano</p></div>
+    <div class="fcol"><span class="fh">Pedidos</span><p>+57 313 551 3979<br>+57 317 746 7739</p><p>Pago por transferencia Bancolombia<br>Flete contra entrega</p></div>
+  </div>
+  <div class="wrap fbot"><span>© 2026 Legacy Minds Limited S.A.S. · NIT 902.081.103-9</span><span>Medellín · Cúcuta, Colombia</span></div>
+</footer>
+
+<a class="fablabel" id="fablabel" href="#" target="_blank" rel="noopener">¿Dudas? ¡Chatea con nosotros!</a>
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+</a>
+
+<script>
+const WA_NUMBER = "573135513979";
+const waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Hola Legacy Minds, quiero recibir el catálogo y una cotización mayorista de suelas.");
+document.getElementById("cta-wa").href = waUrl;
+document.getElementById("fab").href = waUrl;
+document.getElementById("fablabel").href = waUrl;
+document.getElementById("cta-wa2").href = waUrl;
+(()=>{const l=document.getElementById("fablabel"),f=document.getElementById("fab");let t,hov=false,shown=false;
+const show=ms=>{l.classList.add("show");clearTimeout(t);if(ms)t=setTimeout(()=>{if(!hov)l.classList.remove("show")},ms)};
+[f,l].forEach(e=>{e.addEventListener("mouseenter",()=>{hov=true;show()});e.addEventListener("mouseleave",()=>{hov=false;show(600)})});
+addEventListener("scroll",()=>{const y=scrollY;if(y>350&&!shown){shown=true;show(4000)}if(y<200)shown=false},{passive:true});})();
+
+const sole = (c, t) => `<svg viewBox="0 0 200 90"><path d="M20 55 C10 30 50 18 95 22 C140 26 185 24 190 45 C195 66 150 72 100 70 C55 68 28 76 20 55Z" fill="${c}" stroke="#0C0D0D" stroke-width="2"/><path d="M28 60 C40 72 150 74 186 52" fill="none" stroke="${t}" stroke-width="7"/><g stroke="${t}" stroke-width="2" opacity=".6">${[45,65,85,105,125,145,165].map(x=>`<line x1="${x}" y1="32" x2="${x-6}" y2="58"/>`).join("")}</g></svg>`;
+
+const products = [
+  {ref:"REF. 8088 · BLANCA", name:"Deportiva EVA con piso de caucho", tag:"Running · Sneaker · Urbano", desc:"Perfil curvo tipo rocker con amortiguación EVA.", svg:`<video class="svid" src="v8088b43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 blanca girando 360 grados"></video>`, specs:["EVA expandida inyectada, ultraliviana y con memoria elástica","Huella en caucho vulcanizado con labrado multidireccional","Blanco óptico con patines en caucho negro mate"], eu:[36,44], nat:[34,42]},
+  {ref:"REF. 8088 · TOTAL BLACK", name:"Deportiva monocromática", tag:"Ejecutivo · Deportivo · Caballero", desc:"Entresuela y huella negras, numeración grande.", svg:`<video class="svid" src="v8088n43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 Total Black girando 360 grados"></video>`, specs:["EVA compacta aligerada con pisada completa en caucho","Tacos biselados con agarre en baldosa y asfalto","Montado y pegado fácil con adhesivos de poliuretano estándar"], eu:[42,45], nat:[40,43]},
+  {ref:"REF. SKECHERS DAMA", name:"Confort femenino", tag:"Slip-on · Confort", desc:"EVA suave con huella de caucho 1.1 color miel/beige.", svg:`<div class="flip" role="img" aria-label="Suela Skechers Dama girando: huella miel y parte superior blanca"><div class="flipin"><img src="dama-abajo.jpg" alt=""><img src="dama-lado.jpg" alt=""><img src="dama-talon.jpg" alt=""><img src="dama-arriba.jpg" alt=""></div></div>`, specs:["EVA de absorción biomecánica","Inserto de caucho natural 1.1 antideslizante","Ideal para calzado tipo slip-on"], eu:[36,40], nat:[34,38]}
+];
+
+document.getElementById("grid").innerHTML = products.map((p,i)=>{
+  const rows = Array.from({length:p.eu[1]-p.eu[0]+1},(_,k)=>`<tr><td>${p.eu[0]+k}</td><td>${p.nat[0]+k}</td></tr>`).join("");
+  return `<article class="card fade" tabindex="0" style="animation-delay:${i*.1}s">
+    <div class="sole">${p.svg}</div>
+    <div class="body"><span class="ref">${p.ref}</span><h3>${p.name}</h3><span class="tag">${p.tag}</span><p style="margin:0;color:var(--muted)">${p.desc}</p><ul class="spec">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul><span style="font-size:13px;font-weight:600">Tallas ${p.eu[0]}–${p.eu[1]} Euro · ${p.nat[0]}–${p.nat[1]} Nal.</span></div>
+    <div class="over"><span class="lbl">Regla de tallaje</span><div style="overflow:auto"><table><tr><th>Euro</th><th>Nacional</th></tr>${rows}</table></div></div>
+  </article>`;
+}).join("");
+document.querySelectorAll(".card").forEach(c=>{
+  const t=()=>c.classList.toggle("open");
+  c.addEventListener("click",t);
+  c.addEventListener("keydown",e=>{if(e.key==="Enter")t()});
+});
+</script>
+
+</body></html>
