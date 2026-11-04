@@ -26,7 +26,7 @@
    Verde solo para WhatsApp. */
 :root{
   --noche:#0F2450;--azul:#1B3A73;--azul2:#2758A8;--cielo:#9CC3F0;
-  --ambar:#E3A845;--ambar2:#C98B26;--estudio:#D8D8D8;--papel:#F3F5F8;--blanco:#FFFFFF;
+  --plata:#D8D8D8;--ambar:#E3A845;--ambar2:#C98B26;--estudio:#D8D8D8;--papel:#F3F5F8;--blanco:#FFFFFF;
   --tinta:#14213D;--muted:#566177;--linea:#D9DFE9;--wa:#25D366;--wa-tinta:#06281A;
   --resorte:cubic-bezier(.34,1.56,.64,1);
   --fuente:"Archivo","Helvetica Neue",Arial,sans-serif;
@@ -74,9 +74,9 @@ h2{font-size:clamp(32px,5vw,58px)}
 .herotxt{display:grid;gap:16px;justify-items:start;animation:pop .8s var(--resorte) both}
 .hero h1{font-size:clamp(30px,8.6vw,84px);font-weight:900;margin-bottom:.1em}
 .hero h1 span{display:block}
-.hero h1 .swoosh{position:relative;width:fit-content;white-space:nowrap}
+.hero h1 .swoosh{color:var(--plata);position:relative;width:fit-content;white-space:nowrap}
 .swoosh::after{content:"";position:absolute;left:1%;right:2%;bottom:-.16em;height:.1em;border-radius:99px;background:var(--ambar);transform:rotate(-1deg);transform-origin:left;animation:trazo .8s .45s cubic-bezier(.65,0,.35,1) both}
-.hero p{font-size:clamp(17px,2.1vw,22px);max-width:30ch;color:#DCE5F2}
+.hero p{font-size:clamp(17px,2.1vw,22px);max-width:30ch;color:var(--plata)}
 .bgvid,.fgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .bgvid{object-position:50% 30%}
 .fgvid{display:none;object-position:70% 50%}
@@ -131,12 +131,12 @@ h2{font-size:clamp(32px,5vw,58px)}
 
 /* Precios */
 .precios{background:var(--noche);color:#fff}
-.precios .cab p{color:#DCE5F2}
+.precios .cab p{color:var(--plata)}
 .tabla{display:grid;gap:0}
 .tramo{display:grid;gap:4px;padding-block:22px;border-top:1px solid rgba(255,255,255,.2)}
-.tramo span{font-weight:600;color:#DCE5F2}
+.tramo span{font-weight:600;color:var(--plata)}
 .tramo b{font-size:clamp(38px,5vw,60px);font-weight:900;font-stretch:112%;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.tramo em{font-style:normal;font-size:16px;color:#DCE5F2}
+.tramo em{font-style:normal;font-size:16px;color:var(--plata)}
 .tramo.top b{color:var(--ambar)}
 @media(min-width:768px){.tabla{grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px)}}
 
@@ -177,7 +177,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 @media(min-width:900px){.fqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}}
 
 /* Cierre y pie */
-footer{background:var(--noche);color:#C6D2E6;font-size:15px}
+footer{background:var(--noche);color:var(--plata);font-size:15px}
 .cierre{padding-block:clamp(56px,8vw,96px);display:grid;gap:22px;justify-items:start}
 .cierre h2{color:#fff;max-width:16ch}
 .cierre p{font-size:18px;max-width:44ch}
@@ -188,7 +188,7 @@ footer{background:var(--noche);color:#C6D2E6;font-size:15px}
 .pie .col{display:grid;gap:8px;align-content:start}
 .pie .col a{text-decoration:none}
 .pie .col>a:not(.logo):hover{color:var(--ambar)}
-.legal{padding-block:18px 96px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:#A9B7CF}
+.legal{padding-block:18px 96px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:var(--plata)}
 @media(min-width:640px){.pie{grid-template-columns:1fr 1fr}}
 @media(min-width:960px){.pie{grid-template-columns:1.3fr 1fr 1.2fr 1fr}.legal{padding-bottom:28px}}
 
