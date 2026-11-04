@@ -23,7 +23,7 @@
 <style>
 @font-face{font-family:"Archivo";src:url("archivo.woff") format("woff");font-weight:400 900;font-stretch:100% 112%;font-style:normal;font-display:swap}
 /* Legacy Minds: azul noche del logo, gris de estudio de las fotos y ámbar como acento.
-   Verde solo para WhatsApp. El hexágono del logo es el único recurso decorativo. */
+   Verde solo para WhatsApp. */
 :root{
   --noche:#0F2450;--azul:#1B3A73;--azul2:#2758A8;--cielo:#9CC3F0;
   --ambar:#E3A845;--ambar2:#C98B26;--estudio:#D8D8D8;--papel:#F3F5F8;--blanco:#FFFFFF;
@@ -54,84 +54,80 @@ h2{font-size:clamp(32px,5vw,58px)}
 
 /* Menú flotante */
 .nav{position:fixed;z-index:60;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;justify-content:center;padding-inline:12px;pointer-events:none}
-.navbox{pointer-events:auto;display:flex;align-items:center;gap:clamp(8px,2vw,22px);max-width:100%;padding:7px 8px;border-radius:999px;border:1px solid transparent;color:#fff;transition:background .3s,border-color .3s,color .3s,box-shadow .3s}
-.nav.scrolled .navbox{background:rgba(15,36,80,.72);border-color:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);box-shadow:0 10px 30px rgba(15,36,80,.25)}
+.navbox{pointer-events:auto;display:flex;align-items:center;gap:clamp(8px,2vw,22px);max-width:100%;padding:8px 10px 8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 8px 30px rgba(0,0,0,.18);color:#fff;transition:background .3s,border-color .3s,color .3s}
+.nav.scrolled .navbox{background:rgba(15,36,80,.72);border-color:rgba(255,255,255,.2)}
 .nav.scrolled.claro .navbox{background:rgba(255,255,255,.78);border-color:rgba(27,58,115,.14);color:var(--azul)}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
-.logo img{width:38px;height:38px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
-.logo b{display:block;font-size:13px;font-stretch:112%;line-height:1.05;letter-spacing:.01em}
-.logo small{display:block;font-size:11px;line-height:1.2;opacity:.75}
+.logo img{width:40px;height:40px;object-fit:contain}
+.logo b{display:block;font-size:13px;font-weight:700;line-height:1.1;letter-spacing:.02em;text-transform:uppercase}
+.logo small{display:block;margin-top:3px;font-size:8px;line-height:1.2;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
 .navlinks{display:flex;gap:2px;font-size:15px;font-weight:600}
 .navlinks a{padding:9px 12px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s}
 .navlinks a:hover{background:rgba(127,150,190,.22)}
 .navlinks .opc{display:none}
-@media(max-width:439px){.nav .logo span{display:none}.navlinks{font-size:14px}.navlinks a{padding:9px 10px}}
+@media(max-width:439px){.navlinks .nomov{display:none}}
 @media(min-width:768px){.navlinks .opc{display:block}}
 
 /* Banner */
 .hero{position:relative;background:var(--noche);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden}
-.herogrid{flex:1;display:grid;gap:22px;align-content:center;padding-block:calc(84px + env(safe-area-inset-top,0px)) 28px}
+.herogrid{flex:1;display:grid;align-content:end;padding-block:calc(84px + env(safe-area-inset-top,0px)) 32px}
 .herotxt{display:grid;gap:16px;justify-items:start;animation:pop .8s var(--resorte) both}
 .hero h1{font-size:clamp(30px,8.6vw,84px);font-weight:900;margin-bottom:.1em}
 .hero h1 span{display:block}
 .hero h1 .swoosh{position:relative;width:fit-content;white-space:nowrap}
 .swoosh::after{content:"";position:absolute;left:1%;right:2%;bottom:-.16em;height:.1em;border-radius:99px;background:var(--ambar);transform:rotate(-1deg);transform-origin:left;animation:trazo .8s .45s cubic-bezier(.65,0,.35,1) both}
 .hero p{font-size:clamp(17px,2.1vw,22px);max-width:30ch;color:#DCE5F2}
-.datos{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px;font-weight:600;color:#fff}
-.datos li{display:flex;align-items:center;gap:8px}
-.datos li::before{content:"";width:10px;height:11.5px;background:var(--ambar);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.hexbox{position:relative;justify-self:center;height:min(46svh,92vw);aspect-ratio:.866;animation:hexin 1s .1s var(--resorte) both}
-.hexbox::before{content:"";position:absolute;inset:-5%;background:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.hex{position:absolute;inset:0;background:var(--estudio);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.hex video{width:100%;height:100%;object-fit:cover;object-position:91% 50%}
+.bgvid,.fgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.bgvid{object-position:50% 30%}
+.fgvid{display:none;object-position:70% 50%}
+.veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,36,80,.5) 0%,rgba(15,36,80,.12) 22%,rgba(15,36,80,.2) 42%,rgba(15,36,80,.86) 66%,rgba(15,36,80,.96) 100%)}
+.hero>.wrap{position:relative;z-index:2}
 @media(min-width:900px){
-  .herogrid{grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,4vw,64px);align-items:center;align-content:stretch;padding-block:96px 40px}
-  .hero h1{font-size:clamp(36px,4.1vw,56px)}
-  .hexbox{height:min(70vh,40vw,600px)}
+  .bgvid{display:none}.fgvid{display:block}
+  .veil{background:linear-gradient(90deg,rgba(15,36,80,.95) 0%,rgba(15,36,80,.86) 42%,rgba(15,36,80,.2) 68%,rgba(15,36,80,.12) 100%)}
+  .herogrid{align-content:center;padding-block:96px 48px}
+  .hero h1{font-size:clamp(40px,5vw,72px)}
 }
 @keyframes pop{from{opacity:.001;transform:translateY(18px) scale(.97);filter:blur(8px)}}
-@keyframes hexin{from{opacity:.001;transform:scale(.8) rotate(-8deg)}}
 @keyframes trazo{from{transform:rotate(-1deg) scaleX(0)}}
 
-/* Catálogo: fichas de referencia */
+/* Catálogo: tarjetas de referencia */
 .sec{padding-block:clamp(56px,8vw,104px)}
 .cab{display:grid;gap:10px;margin-bottom:clamp(28px,4vw,48px)}
 .cab p{color:var(--muted);max-width:52ch}
-#catalogo{padding-bottom:0}
-.ficha{display:grid;grid-template-columns:1fr;background:var(--blanco);border-top:1px solid var(--linea)}
-.escena{position:relative;background:var(--estudio);aspect-ratio:4/3;overflow:hidden}
+.tarjetas{display:grid;gap:20px;grid-template-columns:1fr}
+.card{display:flex;flex-direction:column;background:var(--blanco);border:1px solid var(--linea);border-radius:20px;overflow:hidden;transition:transform .45s var(--resorte),box-shadow .3s}
+.card.activa{transform:scale(1.025);box-shadow:0 18px 40px rgba(15,36,80,.16);position:relative;z-index:2}
+.escena{position:relative;background:var(--estudio);aspect-ratio:1;overflow:hidden}
+.escena video,.gira{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.card.activa .escena video,.card.activa .gira{transform:scale(1.1)}
 .escena video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gira{position:absolute;inset:0;display:grid;place-items:center;perspective:1100px}
 .giro{position:relative;height:92%;aspect-ratio:1;transform-style:preserve-3d}
-.giro img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(90deg);animation:cara 12s cubic-bezier(.83,0,.17,1) infinite}
-.giro img:nth-child(2){animation-delay:-9s}
-.giro img:nth-child(3){animation-delay:-6s}
-.giro img:nth-child(4){animation-delay:-3s}
+.giro img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(90deg)}
+.giro img:first-child{transform:none}
+.card.activa .giro img{animation:cara 12s cubic-bezier(.83,0,.17,1) -.6s infinite}
+.card.activa .giro img:nth-child(2){animation-delay:-9.6s}
+.card.activa .giro img:nth-child(3){animation-delay:-6.6s}
+.card.activa .giro img:nth-child(4){animation-delay:-3.6s}
 @keyframes cara{0%{transform:rotateY(90deg)}5%,22%{transform:rotateY(0)}27%,100%{transform:rotateY(-90deg)}}
-.info{padding:28px max(16px,4vw) 40px;display:grid;gap:16px;align-content:center}
+.info{padding:22px 20px 22px;display:grid;gap:12px;flex:1;grid-template-rows:auto auto auto auto auto 1fr}
 .ref{font-size:15px;font-weight:700;color:var(--azul2)}
-.info h3{font-size:clamp(26px,3.2vw,38px)}
+.info h3{font-size:clamp(23px,2.2vw,27px)}
 .usos{color:var(--muted);font-weight:500}
-.spec{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:16px}
+.spec{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
 .spec li{padding-left:20px;position:relative}
 .spec li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:11.5px;background:var(--ambar2);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .regla{display:grid;gap:6px}
 .regla-tit{font-size:14px;color:var(--muted);font-weight:600}
 .escala{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));border:1px solid var(--linea);border-radius:10px;overflow:hidden;font-variant-numeric:tabular-nums}
-.t{display:grid;gap:1px;justify-items:center;padding:7px 0 6px;line-height:1.1;font-size:16px;font-weight:700;color:#7C889C;border-left:1px solid var(--linea)}
+.t{display:grid;gap:1px;justify-items:center;padding:7px 0 6px;line-height:1.1;font-size:15px;font-weight:700;color:#7C889C;border-left:1px solid var(--linea)}
 .t:first-child{border-left:0}
 .t small{font-size:12px;font-weight:500}
 .t.si{background:var(--azul);color:#fff;border-left-color:rgba(255,255,255,.22)}
-.info .btn{justify-self:stretch}
-@media(min-width:900px){
-  .ficha{grid-template-columns:1fr 1fr;min-height:520px}
-  .ficha:nth-child(even) .escena{order:2}
-  .ficha:nth-child(even) .info{padding-left:max(4vw,calc((100vw - 1320px)/2 + 4vw))}
-  .escena{aspect-ratio:auto;min-height:100%}
-  .info{padding:48px clamp(32px,5vw,88px)}
-  .info .btn{justify-self:start}
-}
-@media(min-width:640px) and (max-width:899px){.info{padding-inline:6vw}.info .btn{justify-self:start}}
+.info .btn{align-self:end;margin-top:4px}
+@media(min-width:640px){.tarjetas{grid-template-columns:1fr 1fr}.card:last-child:nth-child(odd){grid-column:1/-1}.card:last-child:nth-child(odd) .escena{aspect-ratio:16/7}}
+@media(min-width:1100px){.tarjetas{grid-template-columns:repeat(3,1fr);gap:24px}.card:last-child:nth-child(odd){grid-column:auto}.card:last-child:nth-child(odd) .escena{aspect-ratio:1}}
 
 /* Precios */
 .precios{background:var(--noche);color:#fff}
@@ -139,7 +135,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 .tabla{display:grid;gap:0}
 .tramo{display:grid;gap:4px;padding-block:22px;border-top:1px solid rgba(255,255,255,.2)}
 .tramo span{font-weight:600;color:#DCE5F2}
-.tramo b{font-size:clamp(52px,10vw,104px);font-weight:900;font-stretch:112%;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tramo b{font-size:clamp(38px,5vw,60px);font-weight:900;font-stretch:112%;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .tramo em{font-style:normal;font-size:16px;color:#DCE5F2}
 .tramo.top b{color:var(--ambar)}
 @media(min-width:768px){.tabla{grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px)}}
@@ -222,43 +218,40 @@ footer{background:var(--noche);color:#C6D2E6;font-size:15px}
 <div class="nav" id="nav">
   <nav class="navbox" aria-label="Principal">
     <a class="logo" href="#inicio" aria-label="Legacy Minds, ir al inicio">
-      <img src="logo.png" alt="" width="38" height="38">
-      <span><b>Legacy Minds</b><small>Suelas</small></span>
+      <img src="logo.png" alt="" width="40" height="40">
+      <span><b>Legacy Minds</b><small>Limited</small></span>
     </a>
     <div class="navlinks">
       <a href="#catalogo">Catálogo</a>
       <a class="opc" href="#precios">Precios</a>
-      <a href="#comprar">Cómo comprar</a>
+      <a class="nomov" href="#comprar">Cómo comprar</a>
       <a class="opc" href="#sedes">Sedes</a>
     </div>
   </nav>
 </div>
 
 <header class="hero" id="inicio" data-tono="oscuro">
+  <video class="bgvid" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <video class="fgvid" src="promo169.mp4" poster="poster169.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="veil"></div>
   <div class="wrap herogrid">
     <div class="herotxt">
       <h1><span>La base de cada</span><span class="swoosh">paso que fabricas</span></h1>
       <p>Suelas importadas al por mayor, listas para tu producción.</p>
       <a class="btn btn-ambar" href="#catalogo">Ver catálogo</a>
-      <ul class="datos">
-        <li>Sin pedido mínimo</li>
-        <li>Desde $16.000 el par</li>
-        <li>Despacho a todo el país</li>
-      </ul>
-    </div>
-    <div class="hexbox">
-      <div class="hex"><video src="promo169.mp4" poster="poster169.jpg" autoplay muted loop playsinline aria-label="Suela girando en el aire"></video></div>
     </div>
   </div>
 </header>
 
 <main>
 <section class="sec" id="catalogo" data-tono="claro">
-  <div class="wrap cab">
-    <h2>Referencias en stock</h2>
-    <p>Mira las tallas de cada suela y cotiza la que necesitas por WhatsApp.</p>
+  <div class="wrap">
+    <div class="cab">
+      <h2>Referencias en stock</h2>
+      <p>Mira las tallas de cada suela y cotiza la que necesitas por WhatsApp.</p>
+    </div>
+    <div class="tarjetas" id="tarjetas"></div>
   </div>
-  <div id="fichas"></div>
 </section>
 
 <section class="sec precios" id="precios" data-tono="oscuro">
@@ -339,7 +332,7 @@ footer{background:var(--noche);color:#C6D2E6;font-size:15px}
   </div>
   <div class="wrap pie">
     <div class="col">
-      <a class="logo" href="#inicio"><img src="logo.png" alt="" width="38" height="38"><span><b>Legacy Minds</b><small>Limited</small></span></a>
+      <a class="logo" href="#inicio"><img src="logo.png" alt="" width="40" height="40"><span><b>Legacy Minds</b><small>Limited</small></span></a>
       <p>Importadores mayoristas directos de suelas para calzado en Colombia.</p>
     </div>
     <div class="col"><span class="tit">Navegación</span><a href="#catalogo">Catálogo</a><a href="#precios">Precios</a><a href="#comprar">Cómo comprar</a><a href="#sedes">Sedes</a><a href="#faq">Preguntas frecuentes</a></div>
@@ -361,10 +354,10 @@ const waUrl = wa("Hola Legacy Minds, vi el catálogo en la página y quiero una 
 
 const products = [
   {ref:"Ref. 8088 Blanca", name:"Deportiva EVA con piso de caucho", usos:"Para running, sneaker y urbano. Perfil curvo tipo rocker con amortiguación EVA.",
-   media:`<video src="v8088b43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 blanca girando 360 grados"></video>`,
+   media:`<video src="v8088b43.mp4" poster="p8088b.jpg" preload="metadata" muted loop playsinline aria-label="Suela Ref. 8088 blanca girando 360 grados"></video>`,
    specs:["EVA expandida inyectada, ultraliviana y con memoria elástica","Huella en caucho vulcanizado con labrado multidireccional","Blanco óptico con patines en caucho negro mate"], eu:[36,44]},
   {ref:"Ref. 8088 Total Black", name:"Deportiva monocromática", usos:"Para ejecutivo, deportivo y caballero. Entresuela y huella negras, numeración grande.",
-   media:`<video src="v8088n43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 Total Black girando 360 grados"></video>`,
+   media:`<video src="v8088n43.mp4" poster="p8088n.jpg" preload="metadata" muted loop playsinline aria-label="Suela Ref. 8088 Total Black girando 360 grados"></video>`,
    specs:["EVA compacta aligerada con pisada completa en caucho","Tacos biselados con agarre en baldosa y asfalto","Montado y pegado fácil con adhesivos de poliuretano estándar"], eu:[42,45]},
   {ref:"Ref. Skechers Dama", name:"Confort femenino", usos:"Para slip-on y confort. EVA suave con huella de caucho 1.1 color miel/beige.",
    media:`<div class="gira" role="img" aria-label="Suela Skechers Dama girando: huella miel y parte superior blanca"><div class="giro"><img src="dama-abajo.jpg" alt=""><img src="dama-lado.jpg" alt=""><img src="dama-talon.jpg" alt=""><img src="dama-arriba.jpg" alt=""></div></div>`,
@@ -377,7 +370,7 @@ const regla = ([a,b]) => {
   return `<div class="regla" role="img" aria-label="Tallas disponibles: Euro ${a} a ${b}, nacional ${a-2} a ${b-2}"><span class="regla-tit">Tallas ${a} a ${b} Euro (${a-2} a ${b-2} nacional)</span><div class="escala" aria-hidden="true">${c}</div></div>`;
 };
 
-document.getElementById("fichas").innerHTML = products.map(p => `<article class="ficha">
+document.getElementById("tarjetas").innerHTML = products.map(p => `<article class="card" tabindex="0">
   <div class="escena">${p.media}</div>
   <div class="info">
     <span class="ref">${p.ref}</span>
@@ -388,6 +381,29 @@ document.getElementById("fichas").innerHTML = products.map(p => `<article class=
     <a class="btn btn-wa" href="${wa(`Hola Legacy Minds, quiero cotizar la ${p.ref}. Tallas: ___ Cantidad de pares: ___`)}" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp la ${p.ref}"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar esta referencia</a>
   </div>
 </article>`).join("");
+
+/* Tarjetas: quietas en reposo; animación y zoom con el cursor, el foco o, en celular, al verse en pantalla */
+(() => {
+  const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const activa = (c, si) => {
+    c.classList.toggle("activa", si);
+    const v = c.querySelector("video");
+    if (!v || quieto) return;
+    if (si) v.play().catch(() => {}); else { v.pause(); v.currentTime = 0; }
+  };
+  const cards = [...document.querySelectorAll(".card")];
+  if (matchMedia("(hover: hover)").matches) {
+    cards.forEach(c => {
+      c.addEventListener("mouseenter", () => activa(c, true));
+      c.addEventListener("mouseleave", () => activa(c, false));
+      c.addEventListener("focusin", () => activa(c, true));
+      c.addEventListener("focusout", () => activa(c, false));
+    });
+  } else {
+    const o = new IntersectionObserver(es => es.forEach(e => activa(e.target.closest(".card"), e.isIntersecting)), {threshold:.7});
+    cards.forEach(c => o.observe(c.querySelector(".escena")));
+  }
+})();
 
 /* Menú: cápsula al bajar, clara u oscura según la sección detrás */
 (() => {
