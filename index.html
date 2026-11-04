@@ -141,12 +141,39 @@ h2{font-size:clamp(32px,5vw,58px)}
 @media(min-width:768px){.tabla{grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px)}}
 
 /* Cómo comprar */
-.pasos{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:p}
-.pasos li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
-.pasos li::before{content:counter(p);grid-row:span 2;width:44px;height:50px;display:grid;place-items:center;font-weight:800;font-size:19px;color:#fff;background:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.pasos h3{font-size:24px;align-self:center}
-.pasos p{color:var(--muted)}
-@media(min-width:768px){.pasos{grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px)}.pasos li{grid-template-columns:1fr;gap:10px}.pasos li::before{grid-row:auto}}
+.pasos{list-style:none;margin:0;padding:0;display:grid;gap:34px}
+.paso{position:relative;display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
+.paso .ico{grid-row:span 2;position:relative;z-index:1;width:62px;height:70px;display:grid;place-items:center;background:#E6EBF3;color:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);transition:background .35s,color .35s,transform .5s var(--resorte)}
+.paso .ico svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.paso h3{font-size:24px;align-self:end;transition:color .35s}
+.paso p{color:var(--muted)}
+/* Tramo que une cada paso con el siguiente */
+.paso:not(:last-child)::before,.paso:not(:last-child)::after{content:"";position:absolute;left:30px;top:70px;bottom:-34px;width:3px;background:#E6EBF3}
+.paso:not(:last-child)::after{background:var(--ambar);transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
+.paso.hecho::after{transform:scaleY(1)!important}
+.paso.activo .ico{background:var(--azul);color:#fff;transform:scale(1.14)}
+.paso.activo h3{color:var(--azul2)}
+.paso.activo .pt{animation:pt 1s ease-in-out infinite}
+.paso.activo .pt:nth-of-type(2){animation-delay:.15s}
+.paso.activo .pt:nth-of-type(3){animation-delay:.3s}
+.paso.activo .billete{animation:billete 1.5s ease-in-out infinite}
+.paso.activo .flecha{animation:flecha 1.5s ease-in-out infinite}
+.paso.activo .camion{animation:camion 1.2s ease-in-out infinite}
+.paso.activo .vel{animation:vel .6s linear infinite}
+@keyframes pt{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}}
+@keyframes billete{0%,100%{transform:translateX(-2px)}50%{transform:translateX(2px)}}
+@keyframes flecha{0%{transform:translateX(-5px);opacity:0}30%,70%{opacity:1}100%{transform:translateX(5px);opacity:0}}
+@keyframes camion{0%,100%{transform:translate(-1px,0)}50%{transform:translate(1.5px,-1px)}}
+@keyframes vel{from{transform:translateX(3px);opacity:1}to{transform:translateX(-4px);opacity:0}}
+@media(min-width:768px){
+  .pasos{grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px)}
+  .paso{grid-template-columns:1fr;justify-items:center;text-align:center;gap:12px}
+  .paso .ico{grid-row:auto;width:80px;height:90px}
+  .paso .ico svg{width:42px;height:42px}
+  .paso p{max-width:32ch}
+  .paso:not(:last-child)::before,.paso:not(:last-child)::after{left:calc(50% + 40px);right:auto;top:44px;bottom:auto;height:3px;width:calc(100% + clamp(20px,4vw,48px) - 80px)}
+  .paso:not(:last-child)::after{transform:scaleX(0);transform-origin:left}
+}
 
 /* Sedes */
 #sedes{background:var(--papel)}
@@ -270,10 +297,10 @@ footer{background:var(--noche);color:var(--plata);font-size:15px}
 <section class="sec" id="comprar" data-tono="claro">
   <div class="wrap">
     <div class="cab"><h2>Del pedido a tu taller</h2></div>
-    <ol class="pasos">
-      <li><h3>Cotiza</h3><p>Escríbenos por WhatsApp con referencia, tallas y cantidad de pares.</p></li>
-      <li><h3>Paga</h3><p>Transfiere a la cuenta Bancolombia que te enviamos con la cotización.</p></li>
-      <li><h3>Recibe</h3><p>Despachamos desde Cúcuta por la transportadora de tu preferencia. El flete se paga contra entrega.</p></li>
+    <ol class="pasos" id="pasos">
+      <li class="paso"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5z"/><circle class="pt" cx="8" cy="9.5" r="1" fill="currentColor"/><circle class="pt" cx="12" cy="9.5" r="1" fill="currentColor"/><circle class="pt" cx="16" cy="9.5" r="1" fill="currentColor"/></svg></span><h3>Cotiza</h3><p>Escríbenos por WhatsApp con referencia, tallas y cantidad de pares.</p></li>
+      <li class="paso"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><g class="billete"><rect x="2.5" y="3.5" width="19" height="11.5" rx="2"/><circle cx="12" cy="9.2" r="2.6"/></g><path class="flecha" d="M6 20h12m-3-2.5 3 2.5-3 2.5"/></svg></span><h3>Paga</h3><p>Transfiere a la cuenta Bancolombia que te enviamos con la cotización.</p></li>
+      <li class="paso"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><g class="camion"><path d="M6 6h9v10.5H6z"/><path d="M15 9.5h3.5l3 3.5v3.5H15z"/><circle cx="9.5" cy="17.5" r="1.9"/><circle cx="18" cy="17.5" r="1.9"/></g><path class="vel" d="M.5 9h3M0 12.5h3"/></svg></span><h3>Recibe</h3><p>Despachamos desde Cúcuta por la transportadora de tu preferencia. El flete se paga contra entrega.</p></li>
     </ol>
   </div>
 </section>
@@ -403,6 +430,22 @@ document.getElementById("tarjetas").innerHTML = products.map(p => `<article clas
     const o = new IntersectionObserver(es => es.forEach(e => activa(e.target.closest(".card"), e.isIntersecting)), {threshold:.7});
     cards.forEach(c => o.observe(c.querySelector(".escena")));
   }
+})();
+
+/* Pasos: recorrido 1, 2, 3 en bucle mientras la sección está en pantalla */
+(() => {
+  const pasos = [...document.querySelectorAll(".paso")];
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { pasos.forEach(p => p.classList.add("hecho")); return; }
+  let i = -1, t;
+  const avanza = () => {
+    i = (i + 1) % pasos.length;
+    pasos.forEach((p, k) => { p.classList.toggle("activo", k === i); p.classList.toggle("hecho", k < i); });
+  };
+  new IntersectionObserver(([e]) => {
+    clearInterval(t);
+    if (e.isIntersecting) { i = -1; avanza(); t = setInterval(avanza, 2600); }
+    else pasos.forEach(p => p.classList.remove("activo", "hecho"));
+  }, {threshold:.3}).observe(document.getElementById("pasos"));
 })();
 
 /* Menú: cápsula al bajar, clara u oscura según la sección detrás */
