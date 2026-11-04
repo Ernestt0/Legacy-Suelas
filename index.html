@@ -1,7 +1,11 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Legacy Minds Suelas | Suelas para calzado al por mayor</title>
 <meta name="description" content="Suelas importadas para calzado al por mayor en Colombia. Mira el catálogo y cotiza por WhatsApp. Despachos desde Cúcuta a todo el país.">
-<meta name="theme-color" content="#1B3A73">
+<meta name="theme-color" content="#0F2450">
 <link rel="canonical" href="https://ernestt0.github.io/Legacy-Suelas/">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
@@ -15,298 +19,409 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-</head><body>
+<link rel="preload" href="archivo.woff" as="font" type="font/woff" crossorigin>
 <style>
-/* Identidad Legacy Minds: azul marino sobrio (60-30-10), tarjetas blancas redondeadas, botones píldora negros, Helvetica pesada con palabras clave en azul. */
-:root{--azul:#1B3A73;--azul2:#2758A8;--azul3:#3F74C9;--cielo:#9CC3F0;--hielo:#F3F6FB;--tinta:#111827;--muted:#556070;--linea:#E0E7F2;--ambar:#E3A845;--ambar2:#C98B26;--card:#FFFFFF;
---display:"Helvetica Neue","Helvetica Neue Heavy",Helvetica,Arial,sans-serif;color-scheme:light}
+@font-face{font-family:"Archivo";src:url("archivo.woff") format("woff");font-weight:400 900;font-stretch:100% 112%;font-style:normal;font-display:swap}
+/* Legacy Minds: azul noche del logo, gris de estudio de las fotos y ámbar como acento.
+   Verde solo para WhatsApp. El hexágono del logo es el único recurso decorativo. */
+:root{
+  --noche:#0F2450;--azul:#1B3A73;--azul2:#2758A8;--cielo:#9CC3F0;
+  --ambar:#E3A845;--ambar2:#C98B26;--estudio:#D8D8D8;--papel:#F3F5F8;--blanco:#FFFFFF;
+  --tinta:#14213D;--muted:#566177;--linea:#D9DFE9;--wa:#25D366;--wa-tinta:#06281A;
+  --resorte:cubic-bezier(.34,1.56,.64,1);
+  --fuente:"Archivo","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-body{background:var(--hielo);color:var(--tinta);font-family:var(--display);font-size:16px;line-height:1.55}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;margin:0}
-.hl{color:var(--azul2)}
-.chip{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;justify-self:center}
-.chip svg{color:var(--azul3)}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--blanco);color:var(--tinta);font-family:var(--fuente);font-size:17px;line-height:1.55;overflow-x:clip}
+img,video{display:block;max-width:100%}
 a{color:inherit}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn:focus-visible,.card:focus-visible{outline:3px solid var(--cielo);outline-offset:3px}
-.btn-n{background:var(--tinta);color:#fff;border:1px solid #333}
-.btn-b{background:var(--ambar);color:var(--tinta)}
-.btn-b:hover{background:var(--ambar2)}
-/* Hero */
-.hero{background:linear-gradient(90deg,var(--cielo) 0%,var(--azul3) 12%,var(--azul) 35%,var(--azul) 65%,var(--azul3) 88%,var(--cielo) 100%);color:#fff;padding-bottom:56px}
-.nav{padding-block:16px}
-.navbox{background:#fff;color:var(--tinta);border:3px solid #E3E8EF;border-radius:16px;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo b{font-size:13px;line-height:1.05;letter-spacing:.02em;color:var(--azul)}
-.logo small{display:block;font-size:8px;letter-spacing:.3em;color:var(--muted)}
-.navbox{width:fit-content;max-width:100%;margin:0 auto;gap:28px!important;padding:8px 10px 8px 14px!important;border-radius:999px!important;background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.35)!important;-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);color:#fff!important;box-shadow:0 8px 30px rgba(0,0,0,.18)}
-.navbox .logo b{color:#fff}.navbox .logo small{color:rgba(255,255,255,.75)}
-.navlinks{display:flex;gap:6px;font-size:14px;font-weight:600}
-.navlinks a{padding:8px 14px;border-radius:999px;transition:background .2s}
-.navlinks a:hover{background:rgba(255,255,255,.2)}
-.navlinks a{text-decoration:none}
-@media(max-width:420px){.navbox .logo span{display:none}.navlinks{font-size:13px}}
-.herobody{display:grid;gap:22px;text-align:center;justify-items:center;padding-top:40px}
-.hero h1{font-size:clamp(32px,9.5vw,76px);margin-bottom:.14em}
-.hero p{font-size:clamp(17px,2.2vw,21px);max-width:44ch;margin:0;font-weight:500}
-.hero{position:relative;overflow:hidden;min-height:max(640px,calc(100vh + 28px));min-height:max(640px,calc(100svh + 28px));background:var(--azul);display:flex;flex-direction:column}
-.hero>.wrap{position:relative;z-index:2;width:100%}
-.bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.fgvid{display:none}
-@media(min-width:860px){.bgvid{display:none}.fgvid{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:0}.veil{background:linear-gradient(90deg,rgba(12,28,64,.92) 0%,rgba(27,58,115,.8) 45%,rgba(27,58,115,.15) 75%,rgba(12,28,64,.25))!important}.hero h1{font-size:clamp(52px,6vw,72px)}.herobody{text-align:left;justify-items:start;max-width:720px;margin-left:max(16px,calc((100% - 1120px)/2))}.herobody .row{justify-content:flex-start}}
-.veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,28,64,.55),rgba(27,58,115,.72) 60%,rgba(12,28,64,.88))}
-.herobody{padding-block:40px 70px;flex:1;align-content:center}
-.swoosh{position:relative;display:inline-block;color:#fff;white-space:nowrap}
-.swoosh::after{content:"";position:absolute;left:4%;right:4%;bottom:-.18em;height:.12em;border-radius:99px;background:var(--ambar);transform:rotate(-1.5deg)}
-.vid video{width:100%;height:100%;object-fit:cover;display:block}
-.row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.specs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
-.specs div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:12px 18px;font-size:13px}
-.specs b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
-/* Secciones en tarjeta blanca */
-.panel{background:var(--card);border-radius:24px;margin-top:-28px;position:relative}
-section .wrap{padding-block:56px;display:grid;gap:28px}
-.head{display:grid;gap:12px;text-align:center}
-section h2{font-size:clamp(30px,4.6vw,48px)}
-.sub{margin:0;color:var(--muted);text-align:center}
-.grid{display:grid;gap:20px;grid-template-columns:1fr}
-@media(min-width:640px) and (max-width:899px){.grid{grid-template-columns:1fr 1fr}.grid>:last-child:nth-child(odd){grid-column:1/-1}.grid>.card:last-child:nth-child(odd) .sole{aspect-ratio:16/7}}
-@media(max-width:480px){.prices div{padding:18px 14px}.prices .lbl{font-size:10px;letter-spacing:.08em}.fablabel{font-size:13px;padding:9px 13px}}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:800;font-stretch:112%;line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(32px,5vw,58px)}
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-inline:max(16px,4vw)}
+:focus-visible{outline:3px solid var(--cielo);outline-offset:3px;border-radius:6px}
 .nw{white-space:nowrap}
-@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.sedes{grid-template-columns:1fr 1fr!important}}
-.card{background:#fff;border:1px solid var(--linea);border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
-.card:hover,.card.open{transform:scale(1.02);box-shadow:0 14px 34px rgba(27,58,115,.14)}
-.sole{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;background:#fff;border-bottom:1px solid var(--linea)}
-.sole{position:relative;overflow:hidden;perspective:900px;background:radial-gradient(ellipse at 50% 40%,#fff 0%,#F3F6FB 70%,#E6ECF4 100%)!important}
-.sole::after{content:"";position:absolute;left:22%;right:22%;bottom:9%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(17,24,39,.28),transparent);animation:shadow 5s cubic-bezier(.65,0,.35,1) infinite;z-index:0}
-.sole img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;padding:18px 18px 34px;mix-blend-mode:multiply;transform-style:preserve-3d;animation:levita 5s cubic-bezier(.65,0,.35,1) infinite}
-.flip{position:absolute;inset:0;z-index:1;perspective:1100px;display:grid;place-items:center;animation:levita 5s cubic-bezier(.65,0,.35,1) infinite}
-.flipin{position:relative;height:90%;aspect-ratio:1;transform-style:preserve-3d}
-.flipin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:0!important;mix-blend-mode:normal!important;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(90deg);animation:cara 12s cubic-bezier(.83,0,.17,1) infinite!important}
-.flipin img:nth-child(2){animation-delay:-9s!important}
-.flipin img:nth-child(3){animation-delay:-6s!important}
-.flipin img:nth-child(4){animation-delay:-3s!important}
-@media(prefers-reduced-motion:reduce){.flipin img:first-child{transform:none}}
-@keyframes cara{0%{transform:rotateY(90deg)}5%,20%{transform:rotateY(0)}25%,100%{transform:rotateY(-90deg)}}
-.sole:has(.flip){background:#D8D8D8!important}.sole:has(.flip)::after{display:none}
-.sole .svid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.sole:has(.svid)::after{display:none}
-.card:nth-child(2) .sole img,.card:nth-child(2) .sole::after{animation-delay:-1.6s}
-.card:nth-child(3) .sole img,.card:nth-child(3) .sole::after{animation-delay:-3.2s}
-.card:hover .sole img{animation-duration:2.4s}
-.card:hover .sole::after{animation-duration:2.4s}
-@keyframes levita{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}
-@keyframes shadow{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.72);opacity:.55}}
-.sole svg{width:70%;transition:transform .3s}
-.card:hover .sole svg{transform:scale(1.08) rotate(-4deg)}
-.over{position:absolute;inset:0;background:var(--azul);color:#fff;padding:20px 20px 86px;display:flex;flex-direction:column;justify-content:center;gap:12px;opacity:0;transition:opacity .2s}
-.card:hover .over,.card.open .over{opacity:1}
-.over>div{min-height:0}.over table{border-collapse:collapse;font-variant-numeric:tabular-nums;width:100%;font-size:14px}
-.over td,.over th{border-bottom:1px solid rgba(255,255,255,.25);padding:6px 0;text-align:left}
-.lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-.card{display:flex;flex-direction:column}.body{padding:20px;display:grid;gap:8px;flex:1;grid-template-rows:auto auto auto auto auto auto 1fr}.card-cta{position:relative;z-index:3;justify-content:center;align-self:end;margin-top:8px}
-.ref{font-size:12px;color:var(--azul3);letter-spacing:.1em;font-weight:700}
-.body h3{font-size:22px}
-.spec{margin:4px 0;padding-left:18px;display:grid;gap:4px;font-size:14px;color:var(--muted)}
-.spec li::marker{color:var(--ambar2)}
-.tag{font-size:12px;font-weight:600;background:var(--hielo);color:var(--azul2);border-radius:999px;padding:4px 10px;justify-self:start}
-.prices{display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;border:1px solid var(--linea)}
-.prices div{padding:24px;display:grid;gap:4px}
-.prices div+div{background:var(--azul);color:#fff}
-.prices div+div b{color:var(--ambar)}
-.prices b{font-size:clamp(30px,6vw,46px);font-variant-numeric:tabular-nums}
-.step,.sede{background:var(--hielo);border-radius:20px;padding:26px;display:grid;gap:10px;align-content:start}
-.num{width:36px;height:36px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-weight:800}
-.step h3,.sede h3{font-size:24px}
-.step p,.sede p{margin:0;color:var(--muted)}
-.sedes{display:grid;gap:20px;grid-template-columns:1fr}.horario{margin:0;text-align:center;color:var(--muted)}.horario b{color:var(--tinta)}
-.sede.op{background:var(--azul);color:#fff}
-.sede.op p,.sede.op li{color:#DCE4EE}
-.badge{background:#fff;color:var(--azul);font-weight:800;font-size:12px;letter-spacing:.06em;padding:7px 12px;border-radius:999px;justify-self:start;animation:pulse 2s infinite}
-@keyframes pulse{50%{opacity:.65}}
-ul.log{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-.faq{display:grid;max-width:760px;width:100%;justify-self:center}
-.faqwrap{display:grid;gap:28px}
-@media(min-width:860px){.faqwrap{grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:start}}
-.faq details{border-bottom:1px solid var(--linea);padding-block:18px}
-.faq summary{cursor:pointer;font-weight:700;font-size:17px}
-.faq summary:focus-visible{outline:3px solid var(--cielo)}
-.faq p{margin:10px 0 0;color:var(--muted)}
-footer{background:var(--tinta);color:#B8C0D0;font-size:13px}
-footer a{text-decoration:none}
-.fcta{padding-block:44px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #263247}
-.fcta h3{color:#fff;font-size:clamp(24px,3.4vw,34px)}.fcta p{margin:6px 0 0}
-.fgrid{padding-block:44px;display:grid;gap:32px;grid-template-columns:1fr}
-@media(min-width:640px){.fgrid{grid-template-columns:1fr 1fr}}
-@media(min-width:960px){.fgrid{grid-template-columns:1.4fr 1fr 1.2fr 1fr}}
-.fcol{display:grid;gap:10px;align-content:start;font-size:14px}.fcol p{margin:0;line-height:1.6}
-.fcol b{color:#fff}
-.fcol>a:not(.logo):hover{color:var(--ambar)}
-.fh{color:#fff;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.fbot{padding-block:20px 96px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;border-top:1px solid #263247;font-size:12px;color:#8A96AB}
-.fablabel{position:fixed;z-index:50;right:calc(94px + env(safe-area-inset-right,0px));bottom:calc(34px + env(safe-area-inset-bottom,0px));background:#111827;color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:14px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);white-space:nowrap;opacity:0;transform:translateX(12px);pointer-events:none;transition:opacity .25s,transform .25s}
-.fablabel.show{opacity:1;transform:none;pointer-events:auto}
-.fab{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.wabar{display:none}
-@media(max-width:639px){.fab,.fablabel{display:none!important}.wabar{display:flex;justify-content:center;position:fixed;z-index:50;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));background:#25D366;color:#0B2B17;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s,opacity .25s}.wabar:hover{transform:none}.wabar.off{transform:translateY(90px);opacity:0;pointer-events:none}}
-.fade{animation:fade .6s ease both}
-@keyframes fade{from{opacity:.001;transform:translateY(12px)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
 
-<header class="hero">
-  <video class="bgvid" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-  <video class="fgvid" src="promo169.mp4" poster="poster169.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-  <div class="veil"></div>
-  <div class="wrap nav">
-    <div class="navbox">
-      <a class="logo" href="#">
-        <img src="logo.png" alt="" width="40" height="40" style="object-fit:contain">
-        <span><b>LEGACY MINDS</b><small>LIMITED</small></span>
-      </a>
-      <nav class="navlinks"><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a></nav>
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:17px;line-height:1.1;text-decoration:none;transition:transform .35s var(--resorte),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.94)}
+.btn-ambar{background:var(--ambar);color:var(--noche)}
+.btn-wa{background:var(--wa);color:var(--wa-tinta)}
+.btn svg{flex:none}
+@media(hover:hover){.btn:hover{transform:translateY(-3px) scale(1.03)}.btn-ambar:hover{background:#EDB758}.btn-wa:hover{background:#36E07A}.btn:active{transform:scale(.94)}}
+
+/* Menú flotante */
+.nav{position:fixed;z-index:60;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;justify-content:center;padding-inline:12px;pointer-events:none}
+.navbox{pointer-events:auto;display:flex;align-items:center;gap:clamp(8px,2vw,22px);max-width:100%;padding:7px 8px;border-radius:999px;border:1px solid transparent;color:#fff;transition:background .3s,border-color .3s,color .3s,box-shadow .3s}
+.nav.scrolled .navbox{background:rgba(15,36,80,.72);border-color:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);box-shadow:0 10px 30px rgba(15,36,80,.25)}
+.nav.scrolled.claro .navbox{background:rgba(255,255,255,.78);border-color:rgba(27,58,115,.14);color:var(--azul)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.logo img{width:38px;height:38px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+.logo b{display:block;font-size:13px;font-stretch:112%;line-height:1.05;letter-spacing:.01em}
+.logo small{display:block;font-size:11px;line-height:1.2;opacity:.75}
+.navlinks{display:flex;gap:2px;font-size:15px;font-weight:600}
+.navlinks a{padding:9px 12px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.navlinks a:hover{background:rgba(127,150,190,.22)}
+.navlinks .opc{display:none}
+@media(max-width:439px){.nav .logo span{display:none}.navlinks{font-size:14px}.navlinks a{padding:9px 10px}}
+@media(min-width:768px){.navlinks .opc{display:block}}
+
+/* Banner */
+.hero{position:relative;background:var(--noche);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden}
+.herogrid{flex:1;display:grid;gap:22px;align-content:center;padding-block:calc(84px + env(safe-area-inset-top,0px)) 28px}
+.herotxt{display:grid;gap:16px;justify-items:start;animation:pop .8s var(--resorte) both}
+.hero h1{font-size:clamp(30px,8.6vw,84px);font-weight:900;margin-bottom:.1em}
+.hero h1 span{display:block}
+.hero h1 .swoosh{position:relative;width:fit-content;white-space:nowrap}
+.swoosh::after{content:"";position:absolute;left:1%;right:2%;bottom:-.16em;height:.1em;border-radius:99px;background:var(--ambar);transform:rotate(-1deg);transform-origin:left;animation:trazo .8s .45s cubic-bezier(.65,0,.35,1) both}
+.hero p{font-size:clamp(17px,2.1vw,22px);max-width:30ch;color:#DCE5F2}
+.datos{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px;font-weight:600;color:#fff}
+.datos li{display:flex;align-items:center;gap:8px}
+.datos li::before{content:"";width:10px;height:11.5px;background:var(--ambar);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hexbox{position:relative;justify-self:center;height:min(46svh,92vw);aspect-ratio:.866;animation:hexin 1s .1s var(--resorte) both}
+.hexbox::before{content:"";position:absolute;inset:-5%;background:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hex{position:absolute;inset:0;background:var(--estudio);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hex video{width:100%;height:100%;object-fit:cover;object-position:91% 50%}
+@media(min-width:900px){
+  .herogrid{grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,4vw,64px);align-items:center;align-content:stretch;padding-block:96px 40px}
+  .hero h1{font-size:clamp(36px,4.1vw,56px)}
+  .hexbox{height:min(70vh,40vw,600px)}
+}
+@keyframes pop{from{opacity:.001;transform:translateY(18px) scale(.97);filter:blur(8px)}}
+@keyframes hexin{from{opacity:.001;transform:scale(.8) rotate(-8deg)}}
+@keyframes trazo{from{transform:rotate(-1deg) scaleX(0)}}
+
+/* Catálogo: fichas de referencia */
+.sec{padding-block:clamp(56px,8vw,104px)}
+.cab{display:grid;gap:10px;margin-bottom:clamp(28px,4vw,48px)}
+.cab p{color:var(--muted);max-width:52ch}
+#catalogo{padding-bottom:0}
+.ficha{display:grid;grid-template-columns:1fr;background:var(--blanco);border-top:1px solid var(--linea)}
+.escena{position:relative;background:var(--estudio);aspect-ratio:4/3;overflow:hidden}
+.escena video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gira{position:absolute;inset:0;display:grid;place-items:center;perspective:1100px}
+.giro{position:relative;height:92%;aspect-ratio:1;transform-style:preserve-3d}
+.giro img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(90deg);animation:cara 12s cubic-bezier(.83,0,.17,1) infinite}
+.giro img:nth-child(2){animation-delay:-9s}
+.giro img:nth-child(3){animation-delay:-6s}
+.giro img:nth-child(4){animation-delay:-3s}
+@keyframes cara{0%{transform:rotateY(90deg)}5%,22%{transform:rotateY(0)}27%,100%{transform:rotateY(-90deg)}}
+.info{padding:28px max(16px,4vw) 40px;display:grid;gap:16px;align-content:center}
+.ref{font-size:15px;font-weight:700;color:var(--azul2)}
+.info h3{font-size:clamp(26px,3.2vw,38px)}
+.usos{color:var(--muted);font-weight:500}
+.spec{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:16px}
+.spec li{padding-left:20px;position:relative}
+.spec li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:11.5px;background:var(--ambar2);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.regla{display:grid;gap:6px}
+.regla-tit{font-size:14px;color:var(--muted);font-weight:600}
+.escala{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));border:1px solid var(--linea);border-radius:10px;overflow:hidden;font-variant-numeric:tabular-nums}
+.t{display:grid;gap:1px;justify-items:center;padding:7px 0 6px;line-height:1.1;font-size:16px;font-weight:700;color:#7C889C;border-left:1px solid var(--linea)}
+.t:first-child{border-left:0}
+.t small{font-size:12px;font-weight:500}
+.t.si{background:var(--azul);color:#fff;border-left-color:rgba(255,255,255,.22)}
+.info .btn{justify-self:stretch}
+@media(min-width:900px){
+  .ficha{grid-template-columns:1fr 1fr;min-height:520px}
+  .ficha:nth-child(even) .escena{order:2}
+  .ficha:nth-child(even) .info{padding-left:max(4vw,calc((100vw - 1320px)/2 + 4vw))}
+  .escena{aspect-ratio:auto;min-height:100%}
+  .info{padding:48px clamp(32px,5vw,88px)}
+  .info .btn{justify-self:start}
+}
+@media(min-width:640px) and (max-width:899px){.info{padding-inline:6vw}.info .btn{justify-self:start}}
+
+/* Precios */
+.precios{background:var(--noche);color:#fff}
+.precios .cab p{color:#DCE5F2}
+.tabla{display:grid;gap:0}
+.tramo{display:grid;gap:4px;padding-block:22px;border-top:1px solid rgba(255,255,255,.2)}
+.tramo span{font-weight:600;color:#DCE5F2}
+.tramo b{font-size:clamp(52px,10vw,104px);font-weight:900;font-stretch:112%;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tramo em{font-style:normal;font-size:16px;color:#DCE5F2}
+.tramo.top b{color:var(--ambar)}
+@media(min-width:768px){.tabla{grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px)}}
+
+/* Cómo comprar */
+.pasos{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:p}
+.pasos li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+.pasos li::before{content:counter(p);grid-row:span 2;width:44px;height:50px;display:grid;place-items:center;font-weight:800;font-size:19px;color:#fff;background:var(--azul);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.pasos h3{font-size:24px;align-self:center}
+.pasos p{color:var(--muted)}
+@media(min-width:768px){.pasos{grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px)}.pasos li{grid-template-columns:1fr;gap:10px}.pasos li::before{grid-row:auto}}
+
+/* Sedes */
+#sedes{background:var(--papel)}
+.sedes{display:grid;gap:clamp(24px,4vw,56px)}
+.sede{display:grid;gap:8px;align-content:start}
+.sede h3{font-size:clamp(28px,3.4vw,40px)}
+.sede p{color:var(--muted)}
+.sede p b{color:var(--tinta)}
+.lista{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;color:var(--muted)}
+.horario{margin-top:clamp(28px,4vw,44px);padding-top:22px;border-top:1px solid var(--linea);display:grid;gap:6px 48px}
+.horario h3{font-size:20px;font-stretch:100%;letter-spacing:-.01em}
+.horario dl{margin:0;display:grid;gap:4px 28px}
+.horario div{display:grid;gap:0 10px}
+@media(min-width:768px){.horario div{grid-template-columns:auto 1fr}}
+.horario dt{font-weight:700;min-width:8.5em}
+.horario dd{margin:0;color:var(--muted)}
+@media(min-width:768px){.sedes{grid-template-columns:1fr 1fr}.horario{grid-template-columns:auto 1fr;align-items:baseline}}
+
+/* Preguntas */
+.fqgrid{display:grid;gap:clamp(20px,4vw,48px)}
+.fq details{border-top:1px solid var(--linea)}
+.fq details:last-child{border-bottom:1px solid var(--linea)}
+.fq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;font-weight:700;font-size:18px}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"+";flex:none;font-size:26px;line-height:1;font-weight:500;color:var(--azul2);transition:transform .35s var(--resorte)}
+.fq details[open] summary::after{transform:rotate(45deg)}
+.fq p{padding-bottom:18px;color:var(--muted);max-width:60ch}
+@media(min-width:900px){.fqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}}
+
+/* Cierre y pie */
+footer{background:var(--noche);color:#C6D2E6;font-size:15px}
+.cierre{padding-block:clamp(56px,8vw,96px);display:grid;gap:22px;justify-items:start}
+.cierre h2{color:#fff;max-width:16ch}
+.cierre p{font-size:18px;max-width:44ch}
+.pie{padding-block:36px;display:grid;gap:28px;grid-template-columns:1fr;border-top:1px solid rgba(255,255,255,.16)}
+.pie p{line-height:1.5}
+.pie b{color:#fff}
+.pie .tit{color:#fff;font-weight:700;margin-bottom:6px}
+.pie .col{display:grid;gap:8px;align-content:start}
+.pie .col a{text-decoration:none}
+.pie .col>a:not(.logo):hover{color:var(--ambar)}
+.legal{padding-block:18px 96px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:#A9B7CF}
+@media(min-width:640px){.pie{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.pie{grid-template-columns:1.3fr 1fr 1.2fr 1fr}.legal{padding-bottom:28px}}
+
+/* WhatsApp fijo */
+.fab{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .35s var(--resorte)}
+.fab:hover{transform:scale(1.08)}
+.fablabel{position:fixed;z-index:50;right:calc(94px + env(safe-area-inset-right,0px));bottom:calc(34px + env(safe-area-inset-bottom,0px));background:var(--noche);color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:14px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);white-space:nowrap;opacity:0;transform:translateX(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fablabel.show{opacity:1;transform:none;pointer-events:auto}
+.wabar{display:none}
+@media(max-width:639px){
+  .fab,.fablabel{display:none!important}
+  .wabar{display:flex;position:fixed;z-index:50;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s,opacity .25s}
+  .wabar.off{transform:translateY(90px);opacity:0;pointer-events:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .giro img:first-child{transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></symbol></svg>
+
+<div class="nav" id="nav">
+  <nav class="navbox" aria-label="Principal">
+    <a class="logo" href="#inicio" aria-label="Legacy Minds, ir al inicio">
+      <img src="logo.png" alt="" width="38" height="38">
+      <span><b>Legacy Minds</b><small>Suelas</small></span>
+    </a>
+    <div class="navlinks">
+      <a href="#catalogo">Catálogo</a>
+      <a class="opc" href="#precios">Precios</a>
+      <a href="#comprar">Cómo comprar</a>
+      <a class="opc" href="#sedes">Sedes</a>
     </div>
-  </div>
-  <div class="wrap herobody fade">
-    <h1>La base de cada <span class="swoosh">paso que fabricas</span></h1>
-    <p>Suelas importadas al por mayor, listas para tu producción.</p>
-    <div class="row">
-      <a class="btn btn-b" href="#catalogo">Ver catálogo</a>
+  </nav>
+</div>
+
+<header class="hero" id="inicio" data-tono="oscuro">
+  <div class="wrap herogrid">
+    <div class="herotxt">
+      <h1><span>La base de cada</span><span class="swoosh">paso que fabricas</span></h1>
+      <p>Suelas importadas al por mayor, listas para tu producción.</p>
+      <a class="btn btn-ambar" href="#catalogo">Ver catálogo</a>
+      <ul class="datos">
+        <li>Sin pedido mínimo</li>
+        <li>Desde $16.000 el par</li>
+        <li>Despacho a todo el país</li>
+      </ul>
+    </div>
+    <div class="hexbox">
+      <div class="hex"><video src="promo169.mp4" poster="poster169.jpg" autoplay muted loop playsinline aria-label="Suela girando en el aire"></video></div>
     </div>
   </div>
 </header>
 
-<main class="panel">
-<section id="catalogo">
+<main>
+<section class="sec" id="catalogo" data-tono="claro">
+  <div class="wrap cab">
+    <h2>Referencias en stock</h2>
+    <p>Mira las tallas de cada suela y cotiza la que necesitas por WhatsApp.</p>
+  </div>
+  <div id="fichas"></div>
+</section>
+
+<section class="sec precios" id="precios" data-tono="oscuro">
   <div class="wrap">
-    <div class="head">
-      <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"/></svg>Catálogo</span>
-      <h2>Referencias <span class="hl">en stock</span></h2>
-      <p class="sub">Toca una tarjeta para ver la regla de tallaje.</p>
+    <div class="cab">
+      <h2>Precios por par</h2>
+      <p>El precio depende de la cantidad de pares de tu pedido.</p>
     </div>
-    <div class="grid" id="grid"></div>
-    <div class="prices">
-      <div><span class="lbl" style="color:var(--muted)">Detal / muestras · 1–99 pares</span><b>$16.500</b>COP por par</div>
-      <div><span class="lbl">Mayorista · 100+ pares</span><b>$16.000</b>COP por par</div>
+    <div class="tabla">
+      <div class="tramo"><span>De 1 a 99 pares, detal y muestras</span><b>$16.500</b><em>COP por par</em></div>
+      <div class="tramo top"><span>Mayorista, desde 100 pares</span><b>$16.000</b><em>COP por par</em></div>
     </div>
   </div>
 </section>
 
-<section id="comprar">
+<section class="sec" id="comprar" data-tono="claro">
   <div class="wrap">
-    <div class="head"><h2>Del pedido <span class="hl">a tu taller</span></h2></div>
-    <div class="grid">
-      <div class="step"><span class="num">1</span><h3>Cotiza</h3><p>Escríbenos por WhatsApp con referencia, tallas y cantidad de pares.</p></div>
-      <div class="step"><span class="num">2</span><h3>Paga</h3><p>Transfiere a la cuenta Bancolombia que te enviamos con la cotización.</p></div>
-      <div class="step"><span class="num">3</span><h3>Recibe</h3><p>Despachamos desde Cúcuta por la transportadora de tu preferencia. El flete se paga contra entrega.</p></div>
-    </div>
+    <div class="cab"><h2>Del pedido a tu taller</h2></div>
+    <ol class="pasos">
+      <li><h3>Cotiza</h3><p>Escríbenos por WhatsApp con referencia, tallas y cantidad de pares.</p></li>
+      <li><h3>Paga</h3><p>Transfiere a la cuenta Bancolombia que te enviamos con la cotización.</p></li>
+      <li><h3>Recibe</h3><p>Despachamos desde Cúcuta por la transportadora de tu preferencia. El flete se paga contra entrega.</p></li>
+    </ol>
   </div>
 </section>
 
-<section id="sedes">
+<section class="sec" id="sedes" data-tono="claro">
   <div class="wrap">
-    <div class="head"><h2>Dónde <span class="hl">operamos</span></h2></div>
+    <div class="cab"><h2>Dónde operamos</h2></div>
     <div class="sedes">
       <div class="sede">
-        <span class="ref">SEDE ADMINISTRATIVA</span>
-        <h3>Medellín</h3>
-        <p>Ed. Santa María del Parque, Oficina 1202. Barrio Santa María de los Ángeles, El Poblado.</p>
-        <p><b>Pedidos:</b> <span class="nw">+57 313 551 3979</span> · <span class="nw">+57 317 746 7739</span></p>
-      </div>
-      <div class="sede op">
-        <span class="badge">¡ATENCIÓN AL PÚBLICO HABILITADA!</span>
-        <span class="ref" style="color:#C9D6E6">SEDE OPERATIVA / ALMACÉN</span>
+        <span class="ref">Almacén con atención al público</span>
         <h3>Cúcuta</h3>
         <p>Calle 9 # 9-72 Local 101, Barrio El Llano, Centro.</p>
-        <ul class="log">
-          <li>→ Stock en bodega con entregas a Medellín, Cali, Bogotá, Bucaramanga y todo el país</li>
-          <li>→ Despacho por la transportadora de tu preferencia</li>
-          <li>→ Flete contra entrega</li>
-          <li>→ Pago por transferencia Bancolombia</li>
+        <ul class="lista">
+          <li>Stock en bodega con entregas a Medellín, Cali, Bogotá, Bucaramanga y todo el país</li>
+          <li>Despacho por la transportadora de tu preferencia</li>
+          <li>Flete contra entrega</li>
+          <li>Pago por transferencia Bancolombia</li>
         </ul>
       </div>
+      <div class="sede">
+        <span class="ref">Sede administrativa</span>
+        <h3>Medellín</h3>
+        <p>Ed. Santa María del Parque, Oficina 1202. Barrio Santa María de los Ángeles, El Poblado.</p>
+        <p><b>Pedidos:</b> <span class="nw">+57 313 551 3979</span> y <span class="nw">+57 317 746 7739</span></p>
+      </div>
     </div>
-    <p class="horario"><b>Horario de atención</b><br>Lunes a viernes: <span class="nw">8:30 a. m. a 12:30 p. m.</span> y <span class="nw">1:30 p. m. a 6:00 p. m.</span><br>Sábados: <span class="nw">8:30 a. m. a 12:30 p. m.</span></p>
+    <div class="horario">
+      <h3>Horario de atención</h3>
+      <dl>
+        <div><dt>Lunes a viernes</dt><dd><span class="nw">8:30 a. m. a 12:30 p. m.</span> y <span class="nw">1:30 p. m. a 6:00 p. m.</span></dd></div>
+        <div><dt>Sábados</dt><dd><span class="nw">8:30 a. m. a 12:30 p. m.</span></dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
-<section id="faq">
-  <div class="wrap">
-    <div class="faqwrap"><div class="head" style="text-align:left"><h2>Preguntas <span class="hl">frecuentes</span></h2></div>
-    <div class="faq" style="justify-self:start;max-width:none">
+<section class="sec" id="faq" data-tono="claro">
+  <div class="wrap fqgrid">
+    <h2>Preguntas frecuentes</h2>
+    <div class="fq">
       <details><summary>¿Cuál es el pedido mínimo?</summary><p>No hay mínimo. De 1 a 99 pares el precio es $16.500; desde 100 pares baja a $16.000 por par.</p></details>
       <details><summary>¿Fabrican suelas a medida?</summary><p>No. Distribuimos referencias importadas en stock; no hacemos desarrollos bajo pedido.</p></details>
       <details><summary>¿Puedo mezclar referencias y tallas?</summary><p>Sí. Cuéntanos la combinación por WhatsApp y te confirmamos disponibilidad.</p></details>
       <details><summary>¿Puedo recoger en el almacén?</summary><p>Sí. La sede de Cúcuta tiene atención al público en Calle 9 # 9-72 Local 101, El Llano.</p></details>
       <details><summary>¿Qué material son?</summary><p>EVA (ultraliviana o anatómica según referencia) con huella de caucho antideslizante.</p></details>
-    </div></div>
+    </div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap fcta">
-    <div><h3>¿Listo para tu próxima producción?</h3><p>Cotiza por WhatsApp y despachamos desde Cúcuta a todo el país.</p></div>
-    <a class="btn btn-b" id="cta-wa2" href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+<footer data-tono="oscuro">
+  <div class="wrap cierre">
+    <h2>¿Listo para tu próxima producción?</h2>
+    <p>Cotiza por WhatsApp y despachamos desde Cúcuta a todo el país.</p>
+    <a class="btn btn-wa" id="cta-wa2" href="#" target="_blank" rel="noopener"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
   </div>
-  <div class="wrap fgrid">
-    <div class="fcol">
-      <a class="logo" href="#"><img src="logo.png" alt="" width="40" height="40" style="object-fit:contain"><span><b style="color:#fff">LEGACY MINDS</b><small style="color:#8A96AB">LIMITED</small></span></a>
+  <div class="wrap pie">
+    <div class="col">
+      <a class="logo" href="#inicio"><img src="logo.png" alt="" width="38" height="38"><span><b>Legacy Minds</b><small>Limited</small></span></a>
       <p>Importadores mayoristas directos de suelas para calzado en Colombia.</p>
     </div>
-    <div class="fcol"><span class="fh">Navegación</span><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a><a href="#sedes">Sedes</a><a href="#faq">Preguntas frecuentes</a></div>
-    <div class="fcol"><span class="fh">Sedes</span><p><b>Medellín</b><br>Ed. Santa María del Parque, Of. 1202, El Poblado</p><p><b>Cúcuta · Bodega</b><br>Calle 9 # 9-72 Local 101, El Llano</p></div>
-    <div class="fcol"><span class="fh">Pedidos</span><p>+57 313 551 3979<br>+57 317 746 7739</p><p>Lunes a viernes:<br>8:30 a. m. a 12:30 p. m.<br>1:30 p. m. a 6:00 p. m.</p><p>Sábados:<br>8:30 a. m. a 12:30 p. m.</p><p>Pago por transferencia Bancolombia<br>Flete contra entrega</p></div>
+    <div class="col"><span class="tit">Navegación</span><a href="#catalogo">Catálogo</a><a href="#precios">Precios</a><a href="#comprar">Cómo comprar</a><a href="#sedes">Sedes</a><a href="#faq">Preguntas frecuentes</a></div>
+    <div class="col"><span class="tit">Sedes</span><p><b>Cúcuta, almacén</b><br>Calle 9 # 9-72 Local 101, El Llano</p><p><b>Medellín</b><br>Ed. Santa María del Parque, Of. 1202, El Poblado</p></div>
+    <div class="col"><span class="tit">Pedidos</span><p>+57 317 746 7739 (WhatsApp)<br>+57 313 551 3979</p><p>Lunes a viernes:<br>8:30 a. m. a 12:30 p. m.<br>1:30 p. m. a 6:00 p. m.</p><p>Sábados:<br>8:30 a. m. a 12:30 p. m.</p></div>
   </div>
-  <div class="wrap fbot"><span>© 2026 Legacy Minds Limited S.A.S. · NIT 902.081.103-9</span><span>Medellín · Cúcuta, Colombia</span></div>
+  <div class="wrap legal"><span>© 2026 Legacy Minds Limited S.A.S. NIT 902.081.103-9</span><span>Medellín y Cúcuta, Colombia</span></div>
 </footer>
 
 <a class="fablabel" id="fablabel" href="#" target="_blank" rel="noopener">¿Dudas? ¡Chatea con nosotros!</a>
-<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
-</a>
-
-<a class="wabar btn" id="wabar" href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="30" height="30" style="color:#fff"><use href="#i-wa"/></svg></a>
+<a class="wabar btn btn-wa off" id="wabar" href="#" target="_blank" rel="noopener"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
 
 <script>
 const WA_NUMBER = "573177467739";
 const wa = t => "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t);
 const waUrl = wa("Hola Legacy Minds, vi el catálogo en la página y quiero una cotización de suelas.");
-document.getElementById("fab").href = waUrl;
-document.getElementById("fablabel").href = waUrl;
-document.getElementById("cta-wa2").href = waUrl;
-document.getElementById("wabar").href = waUrl;
-(()=>{const b=document.getElementById("wabar"),seen=new Set();b.classList.add("off");
-const o=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));b.classList.toggle("off",seen.size>0)},{rootMargin:"-80px 0px 0px 0px"});
-o.observe(document.querySelector(".hero"));o.observe(document.getElementById("cta-wa2"));})();
-(()=>{const l=document.getElementById("fablabel"),f=document.getElementById("fab");let t,hov=false,shown=false;
-const show=ms=>{l.classList.add("show");clearTimeout(t);if(ms)t=setTimeout(()=>{if(!hov)l.classList.remove("show")},ms)};
-[f,l].forEach(e=>{e.addEventListener("mouseenter",()=>{hov=true;show()});e.addEventListener("mouseleave",()=>{hov=false;show(600)})});
-addEventListener("scroll",()=>{const y=scrollY;if(y>350&&!shown){shown=true;show(4000)}if(y<200)shown=false},{passive:true});})();
-
-const sole = (c, t) => `<svg viewBox="0 0 200 90"><path d="M20 55 C10 30 50 18 95 22 C140 26 185 24 190 45 C195 66 150 72 100 70 C55 68 28 76 20 55Z" fill="${c}" stroke="#0C0D0D" stroke-width="2"/><path d="M28 60 C40 72 150 74 186 52" fill="none" stroke="${t}" stroke-width="7"/><g stroke="${t}" stroke-width="2" opacity=".6">${[45,65,85,105,125,145,165].map(x=>`<line x1="${x}" y1="32" x2="${x-6}" y2="58"/>`).join("")}</g></svg>`;
+["fab","fablabel","cta-wa2","wabar"].forEach(id => document.getElementById(id).href = waUrl);
 
 const products = [
-  {ref:"REF. 8088 · BLANCA", name:"Deportiva EVA con piso de caucho", tag:"Running · Sneaker · Urbano", desc:"Perfil curvo tipo rocker con amortiguación EVA.", svg:`<video class="svid" src="v8088b43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 blanca girando 360 grados"></video>`, specs:["EVA expandida inyectada, ultraliviana y con memoria elástica","Huella en caucho vulcanizado con labrado multidireccional","Blanco óptico con patines en caucho negro mate"], eu:[36,44], nat:[34,42]},
-  {ref:"REF. 8088 · TOTAL BLACK", name:"Deportiva monocromática", tag:"Ejecutivo · Deportivo · Caballero", desc:"Entresuela y huella negras, numeración grande.", svg:`<video class="svid" src="v8088n43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 Total Black girando 360 grados"></video>`, specs:["EVA compacta aligerada con pisada completa en caucho","Tacos biselados con agarre en baldosa y asfalto","Montado y pegado fácil con adhesivos de poliuretano estándar"], eu:[42,45], nat:[40,43]},
-  {ref:"REF. SKECHERS DAMA", name:"Confort femenino", tag:"Slip-on · Confort", desc:"EVA suave con huella de caucho 1.1 color miel/beige.", svg:`<div class="flip" role="img" aria-label="Suela Skechers Dama girando: huella miel y parte superior blanca"><div class="flipin"><img src="dama-abajo.jpg" alt=""><img src="dama-lado.jpg" alt=""><img src="dama-talon.jpg" alt=""><img src="dama-arriba.jpg" alt=""></div></div>`, specs:["EVA de absorción biomecánica","Inserto de caucho natural 1.1 antideslizante","Ideal para calzado tipo slip-on"], eu:[36,40], nat:[34,38]}
+  {ref:"Ref. 8088 Blanca", name:"Deportiva EVA con piso de caucho", usos:"Para running, sneaker y urbano. Perfil curvo tipo rocker con amortiguación EVA.",
+   media:`<video src="v8088b43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 blanca girando 360 grados"></video>`,
+   specs:["EVA expandida inyectada, ultraliviana y con memoria elástica","Huella en caucho vulcanizado con labrado multidireccional","Blanco óptico con patines en caucho negro mate"], eu:[36,44]},
+  {ref:"Ref. 8088 Total Black", name:"Deportiva monocromática", usos:"Para ejecutivo, deportivo y caballero. Entresuela y huella negras, numeración grande.",
+   media:`<video src="v8088n43.mp4" autoplay muted loop playsinline aria-label="Suela Ref. 8088 Total Black girando 360 grados"></video>`,
+   specs:["EVA compacta aligerada con pisada completa en caucho","Tacos biselados con agarre en baldosa y asfalto","Montado y pegado fácil con adhesivos de poliuretano estándar"], eu:[42,45]},
+  {ref:"Ref. Skechers Dama", name:"Confort femenino", usos:"Para slip-on y confort. EVA suave con huella de caucho 1.1 color miel/beige.",
+   media:`<div class="gira" role="img" aria-label="Suela Skechers Dama girando: huella miel y parte superior blanca"><div class="giro"><img src="dama-abajo.jpg" alt=""><img src="dama-lado.jpg" alt=""><img src="dama-talon.jpg" alt=""><img src="dama-arriba.jpg" alt=""></div></div>`,
+   specs:["EVA de absorción biomecánica","Inserto de caucho natural 1.1 antideslizante","Ideal para calzado tipo slip-on"], eu:[36,40]}
 ];
 
-document.getElementById("grid").innerHTML = products.map((p,i)=>{
-  const rows = Array.from({length:p.eu[1]-p.eu[0]+1},(_,k)=>`<tr><td>${p.eu[0]+k}</td><td>${p.nat[0]+k}</td></tr>`).join("");
-  return `<article class="card fade" tabindex="0" style="animation-delay:${i*.1}s">
-    <div class="sole">${p.svg}</div>
-    <div class="body"><span class="ref">${p.ref}</span><h3>${p.name}</h3><span class="tag">${p.tag}</span><p style="margin:0;color:var(--muted)">${p.desc}</p><ul class="spec">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul><span style="font-size:13px;font-weight:600">Tallas ${p.eu[0]}–${p.eu[1]} Euro · ${p.nat[0]}–${p.nat[1]} Nal.</span><a class="btn btn-b card-cta" href="${wa(`Hola Legacy Minds, quiero cotizar la ${p.ref}. Tallas: ___ Cantidad de pares: ___`)}" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp ${p.ref}">Cotizar esta referencia</a></div>
-    <div class="over"><span class="lbl">Regla de tallaje</span><div style="overflow:auto"><table><tr><th>Euro</th><th>Nacional</th></tr>${rows}</table></div></div>
-  </article>`;
-}).join("");
-document.querySelectorAll(".card").forEach(c=>{
-  const t=()=>c.classList.toggle("open");
-  c.addEventListener("click",e=>{if(!e.target.closest("a"))t()});
-  c.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.target.closest("a"))t()});
-});
-</script>
+const regla = ([a,b]) => {
+  let c = "";
+  for (let e = 36; e <= 45; e++) c += `<div class="t${e>=a&&e<=b?" si":""}">${e}<small>${e-2}</small></div>`;
+  return `<div class="regla" role="img" aria-label="Tallas disponibles: Euro ${a} a ${b}, nacional ${a-2} a ${b-2}"><span class="regla-tit">Tallas ${a} a ${b} Euro (${a-2} a ${b-2} nacional)</span><div class="escala" aria-hidden="true">${c}</div></div>`;
+};
 
-</body></html>
+document.getElementById("fichas").innerHTML = products.map(p => `<article class="ficha">
+  <div class="escena">${p.media}</div>
+  <div class="info">
+    <span class="ref">${p.ref}</span>
+    <h3>${p.name}</h3>
+    <p class="usos">${p.usos}</p>
+    <ul class="spec">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
+    ${regla(p.eu)}
+    <a class="btn btn-wa" href="${wa(`Hola Legacy Minds, quiero cotizar la ${p.ref}. Tallas: ___ Cantidad de pares: ___`)}" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp la ${p.ref}"><svg width="22" height="22"><use href="#i-wa"/></svg>Cotizar esta referencia</a>
+  </div>
+</article>`).join("");
+
+/* Menú: cápsula al bajar, clara u oscura según la sección detrás */
+(() => {
+  const nav = document.getElementById("nav"), zonas = [...document.querySelectorAll("[data-tono]")];
+  const pinta = () => {
+    nav.classList.toggle("scrolled", scrollY > 24);
+    let tono = "oscuro";
+    for (const z of zonas) if (z.getBoundingClientRect().top <= 44) tono = z.dataset.tono;
+    nav.classList.toggle("claro", tono === "claro");
+  };
+  addEventListener("scroll", pinta, {passive:true}); addEventListener("resize", pinta); pinta();
+})();
+
+/* Barra de WhatsApp en celular: se oculta en el banner y en el cierre */
+(() => {
+  const b = document.getElementById("wabar"), vistos = new Set();
+  const o = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting ? vistos.add(e.target) : vistos.delete(e.target));
+    b.classList.toggle("off", vistos.size > 0);
+  }, {rootMargin:"-80px 0px 0px 0px"});
+  o.observe(document.getElementById("inicio")); o.observe(document.getElementById("cta-wa2"));
+})();
+
+/* Mensaje junto a la burbuja en computador */
+(() => {
+  const l = document.getElementById("fablabel"), f = document.getElementById("fab");
+  let t, hov = false, shown = false;
+  const show = ms => { l.classList.add("show"); clearTimeout(t); if (ms) t = setTimeout(() => { if (!hov) l.classList.remove("show"); }, ms); };
+  [f,l].forEach(e => {
+    e.addEventListener("mouseenter", () => { hov = true; show(); });
+    e.addEventListener("mouseleave", () => { hov = false; show(600); });
+  });
+  addEventListener("scroll", () => { const y = scrollY; if (y > 350 && !shown) { shown = true; show(4000); } if (y < 200) shown = false; }, {passive:true});
+})();
+</script>
+</body>
+</html>
